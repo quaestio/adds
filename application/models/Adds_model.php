@@ -48,7 +48,7 @@ class Adds_model extends CI_Model {
                     <li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li>
                     </ul>
                     </div>
-                    </div>
+                    </div>';
                     //===================================================================
                       $display[$array_index]['tender_id']= $row['add_id'];
                       $display[$array_index]['add_title']= $row->add_title;
