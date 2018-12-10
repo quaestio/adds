@@ -29,11 +29,9 @@ class Registration_model extends CI_Model {
 		else
 	 		return 0;
 	}
-	public function check_duplicate($orgName,$email)
+	public function check_duplicate($email)
 	{
 		
-		
-		//$this->db->where('org_name',str_replace(" ", '', $orgName));
 		$this->db->where('email_primary',$email);
 		$query=$this->db->get('customers');
 		if($query->num_rows()>0)			

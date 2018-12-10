@@ -51,7 +51,7 @@ class Register extends CI_Controller {
 						
 					);
 					$data['form_data']=$form_data;
-				 if(!$this->registration_model->check_duplicate(makeSafe($this->input->post('org_name')),makeSafe($this->input->post('email_primary'))))
+				 if(!$this->registration_model->check_duplicate(makeSafe($this->input->post('email_primary'))))
 				 {
 				
 					
@@ -167,7 +167,7 @@ class Register extends CI_Controller {
         {
             
             $data['top_menu'] = $this->common_model-> menues();
-            $data['email_mobile_stat'] = $this->login_model-> email_mobile_stat($cid);
+            $data['email_mobile_stat'] = $this->	-> email_mobile_stat($cid);
             
             $data['cid'] = $cid;
             $this->load->view('reg_success',$data);

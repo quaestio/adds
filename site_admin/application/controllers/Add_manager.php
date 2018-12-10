@@ -53,19 +53,25 @@ class Add_manager extends CI_Controller {
     
     
     public function add_op($op="",$add_id="")	{
-        
+       	
         $data['operation']=$op;
-        $data['country_list']=$this->cm->country_list();
         $data['tc']=$this->cm->tender_categories();
         $data['vendor']=$this->cm->customers();
+		//$data['cty']=$this->cm->cty();
         
         if($this->input->post('operation')=="save" or $this->input->post('operation')=="update")
         {
             
             $form_data=array(
                 'customer_id' =>  makeSafe($this->input->post('customer_id')),
+                'category_id' =>  makeSafe($this->input->post('category_id')),
                 'add_description' => makeSafe($this->input->post('add_description')),
+				'add_title' => makeSafe($this->input->post('add_title')),
+				'city_id' => makeSafe($this->input->post('city_id')),
+				'pin_code' => makeSafe($this->input->post('pin_code')),
                 'link' => $this->input->post('link'),
+				'lati' => makeSafe($this->input->post('lati')),
+				'longi' => makeSafe($this->input->post('longi')),
                 'from_date' => makeSafe($this->input->post('from_date')),
                 'to_date' => makeSafe($this->input->post('to_date')),
                 'login_page' => makeSafe($this->input->post('login_page'))==""?'N':'Y',
@@ -96,7 +102,7 @@ class Add_manager extends CI_Controller {
             {
                 
                 $data['form_data']=$this->add_model->get_add_by_id($add_id);
-               // print_r( $data['form_data']);
+					print_r( $data['form_data']);
                 
             }
             

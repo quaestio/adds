@@ -11,7 +11,7 @@ class Profile extends CI_Controller {
        
     }
     public function index(){
-        $data['top_menu'] = $this->common_model-> menues(); 
+        $data['top_menu'] = $this->common_model->menues(); 
        
         $this->load->view('profile',$data);
     }
@@ -19,7 +19,7 @@ class Profile extends CI_Controller {
    
     public function fav_tenders($offset,$limit)
 		{
-		    echo json_encode($this->user_model-> fav_tenders($offset,$limit));
+		    echo json_encode($this->user_model->fav_tenders($offset,$limit));
 		}
 	
 	

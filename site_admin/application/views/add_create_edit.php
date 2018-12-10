@@ -65,7 +65,19 @@
                                 <div class="box-body clearfix">
                                 	<div class="col-xs-12">
 								 		<div class="form-group">
-		                                     <label for="">Organization</label>
+		                                     <label for="">Category</label>
+											 <select name="category_id" id="category_id" class="form-control">
+											 <option value=''>select category</option>
+											 <?php 
+											 foreach($tc as $items)
+											 echo'<option value="'.$items['category_id'].'">'.$items['category_name'].'</option>';
+											 ?>
+											 </select>
+		                                </div>
+                                  </div>
+								  <div class="col-xs-12">
+								 		<div class="form-group">
+		                                     <label for="">Organization/Customer</label>
 		                                      <input type="text" placeholder="" id="org_name" name="org_name" value="<?=@$form_data['org_name'] ?>" class="form-control">
 		                                      <input type="hidden" placeholder="" id="customer_id" name="customer_id" value="<?=@$form_data['customer_id'] ?>" class="form-control">
 		                                 </div>
@@ -76,12 +88,48 @@
                                      		<label for="">Description</label>
                                       		<textarea placeholder="" id="add_description" name="add_description" class="form-control"><?=@$form_data['add_description'];?></textarea>
                                  		</div> 
-                                	</div>    
+                                	</div>
+                                    <div class="col-xs-12">
+		                              	<div class="form-group">
+                                     		<label for="">Add-Title</label>
+                                      		<textarea placeholder="" id="add_title" name="add_title" class="form-control"><?=@$form_data['add_title'];?></textarea>
+                                 		</div> 
+                                	</div>									
+                                    <div class="col-xs-6">
+								 		<div class="form-group">
+		                                     <label for="">City</label>
+											 <select name="city_id" id="city_id" class="form-control">
+											 <option value=''>select city</option>
+											 <?php 
+											 foreach($cty as $items)
+											 echo'<option value="'.$items['city_id'].'">'.$items['city_name'].'</option>';
+											 ?>
+											 </select>
+		                                </div>
+                                  </div>
+                                   <div class="col-xs-6">
+								 		<div class="form-group">
+		                                     <label for="">Pincode</label>
+		                                      <input type="text" placeholder="" id="pin_code" name="pin_code" value="<?=@$form_data['pin_code'] ?>" class="form-control">
+		                                 </div>
+                                  </div>								  
                                                               
                                   <div class="col-xs-6">
 								 		<div class="form-group">
 		                                     <label for="">Web Site</label>
 		                                      <input type="text" placeholder="" id="link" name="link" value="<?=@$form_data['link'] ?>" class="form-control">
+		                                 </div>
+                                  </div>
+								  <div class="col-xs-6">
+								 		<div class="form-group">
+		                                     <label for="">Latitude</label>
+		                                      <input type="text" placeholder="lititude" id="lati" name="lati" value="<?=@$form_data['lati'] ?>" class="form-control">
+		                                 </div>
+                                  </div>
+								  <div class="col-xs-6">
+								 		<div class="form-group">
+		                                     <label for="">Longitude</label>
+		                                      <input type="text" placeholder="longitude" id="longi" name="longi" value="<?=@$form_data['longi'] ?>" class="form-control">
 		                                 </div>
                                   </div>
                                   <div class="col-xs-6">
@@ -239,7 +287,7 @@
  					}
  				});
  			});	
-		
+		$('#category_id').val(<?=@$form_data['category_id'];?>);
 
 		
 		

@@ -3,20 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
-| Display USer dEFILE
-|--------------------------------------------------------------------------
-|
-| If set to TRUE, a backtrace will be displayed along with php errors. If
-| error_reporting is disabled, the backtrace will not display, regardless
-| of this setting
-|
-*/
-defined('GOOGLE_SECRET') OR define('GOOGLE_C_SECRET', '6Lf_AnsUAAAAAOQ-MvqE290KtxlYltqLHGmjgq9v');
-defined('GOOGLE_SECRET') OR define('GOOGLE_C_PUBLIC', '6Lf_AnsUAAAAAPzeKchYOVShPA8H6LyT44jkDL-k');
-
-/*
-/*
-|--------------------------------------------------------------------------
 | Display Debug backtrace
 |--------------------------------------------------------------------------
 |

@@ -28,7 +28,7 @@ class Common_model extends CI_Model {
 	}
 
 	function tender_categories(){
-	    $sql="select tc_id,tc_name from tender_category order  by tc_name ";
+	    $sql="select category_id,category_name from category	 where lavel=1 order  by category_name ";
 	    return $query = $this->db->query($sql)->result_array();
 	}
 	function customers(){

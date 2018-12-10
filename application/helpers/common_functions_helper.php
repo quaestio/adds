@@ -50,8 +50,6 @@ function makeSafe($string){
 
 function create_session()
 {
-
-
 $day = date('d', time());
 $month = date('m', time());
 $year = date('Y', time());
