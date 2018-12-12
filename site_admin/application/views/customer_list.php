@@ -137,16 +137,11 @@
 				},
 				fields: {
 					customer_id: {key: true,	title: 'ID',create: false,	edit: false,list:false},
-					reg_type: {	title: 'REG TYPE',create: false,	edit: false,
-						display: function (data) {
-								if(data.record.reg_type=="B") return "Buyer";
-								if(data.record.reg_type=="S") return "Seller";
-								if(data.record.reg_type=="C") return "Both";
-						}},
-						org_name: {	create: true,	edit: true,list: true,title: 'ORG NAME'},
+					reg_type: {	title: 'REG TYPE',create: false,	edit: false},
+						first_name: {	create: true,	edit: true,list: true,title: 'NAME'},
 						address_line_1: {	create: true,	edit: true,list: true,title: 'Address'},
-						email: {create: true,	edit: true,list: true,title: 'Email',display: function (data) {	return 'Office:'+data.record.office_email+'<br />'+data.record.email_primary;}},
-						contacts: {create: true,	edit: true,list: true,title: 'Email',display: function (data) {	return 'Office:'+data.record.land_line+'Ext:'+data.record.land_line_ext+'<br />Mobile'+data.record.mobile_primary+','+data.record.alt_mobile_primary;}},
+						email: {create: true,	edit: true,list: true,title: 'Email'},
+						phone: {create: true,	edit: true,list: true,title: 'Phone'},
 												
 						identity_verified: {	create: true,	edit: true,list: true,title: 'VERIFIED',display: function (data) {
 							if(data.record.identity_verified=='N')
@@ -154,8 +149,8 @@
 								else
 								return '<span class="label label-success"><a href="#" class="btnDelete text-white" data_id="'+data.record.customer_id+'" data_value="'+data.record.identity_verified+'">Approved</a></span>';
 							}},
-							email_verified: {	create: true,	edit: true,list: true,title: 'EMV'},
-							mobile_verified: {	create: true,	edit: true,list: true,title: 'MV'},
+							email_verified: {	create: true,	edit: true,list: true,title: 'Email Verified'},
+							mobile_verified: {	create: true,	edit: true,list: true,title: 'Mobile Verified'},
 							date_register: {	create: true,	edit: true,list: true,title: 'DT. Register'},
 				},
 			

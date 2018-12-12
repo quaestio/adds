@@ -11,24 +11,21 @@ class Customer_model extends CI_Model {
 		$jtPageSize=$this->input->get('jtPageSize');
 		$sql="select * FROM customers 
    		  		where  identity_verified like '%".makeSafe($_POST['iv']) . "%'
-               and ( org_name like '%".makeSafe($_POST['s_str']) . "%'
-                or email_primary like '%".makeSafe($_POST['s_str']) . "%'
-                or primary_reg_name like '%".makeSafe($_POST['s_str']) . "%'
-                or office_email like '%".makeSafe($_POST['s_str']) . "%'
-                or alt_mobile_primary like '%".makeSafe($_POST['s_str']) . "%'
-		        or mobile_primary like '%".makeSafe($_POST['s_str']) . "%')";
+               and ( first_name like '%".makeSafe($_POST['s_str']) . "%'
+                or email like '%".makeSafe($_POST['s_str']) . "%'
+               
+              
+                
+		        or phone like '%".makeSafe($_POST['s_str']) . "%')";
 		$query=$this->db->query($sql);
 		$recordCount = $query->num_rows();
 
 		//Get records from database
 		$sql="select * FROM customers
    		where   identity_verified like '%".makeSafe($_POST['iv']) . "%'
-               and ( org_name like '%".makeSafe($_POST['s_str']) . "%'
-                or email_primary like '%".makeSafe($_POST['s_str']) . "%'
-                or primary_reg_name like '%".makeSafe($_POST['s_str']) . "%'
-                or office_email like '%".makeSafe($_POST['s_str']) . "%'
-                or alt_mobile_primary like '%".makeSafe($_POST['s_str']) . "%'
-		        or mobile_primary like '%".makeSafe($_POST['s_str']) . "%') 
+                and ( first_name like '%".makeSafe($_POST['s_str']) . "%'
+                or email like '%".makeSafe($_POST['s_str']) . "%'
+                or phone like '%".makeSafe($_POST['s_str']) . "%')
                 ORDER BY " . makeSafe($_GET["jtSorting"]) . " LIMIT " . makeSafe($_GET["jtStartIndex"]) . "," . makeSafe($_GET["jtPageSize"]) . "";
 		$query=$this->db->query($sql);
 		//Add all records to an array
