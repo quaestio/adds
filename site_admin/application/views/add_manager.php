@@ -87,7 +87,7 @@
                                         <tr>
                                           
                                             <td><img src="<?=base_url()?>../site_img/adds/<?=$items['img_1'];?>" height="100px"></td>
-                                            <td><?=$items['org_name'];?></td>
+                                            <td><?=$items['first_name'];?></td>
                                             <td><?=$items['add_description'];?></td>
                                             <td><a href="<?=$items['link'];?>" target="_new">link</a></td>
                                             <td><?=$items['from_date'];?></td>

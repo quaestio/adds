@@ -67,6 +67,7 @@ class Add_manager extends CI_Controller {
                 'category_id' =>  makeSafe($this->input->post('category_id')),
                 'add_description' => makeSafe($this->input->post('add_description')),
 				'add_title' => makeSafe($this->input->post('add_title')),
+				'address_line_1' => makeSafe($this->input->post('address_line_1')),
 				'city_id' => makeSafe($this->input->post('city_id')),
 				'pin_code' => makeSafe($this->input->post('pin_code')),
                 'link' => $this->input->post('link'),
@@ -102,7 +103,7 @@ class Add_manager extends CI_Controller {
             {
                 
                 $data['form_data']=$this->add_model->get_add_by_id($add_id);
-					print_r( $data['form_data']);
+				
                 
             }
             
@@ -123,5 +124,6 @@ class Add_manager extends CI_Controller {
   
   
     public function customer_hint(){	echo json_encode($this->add_model->customer_hint());}
+    public function city_hint(){	echo json_encode($this->add_model->city_hint());}
     public function upload_image(){    echo json_encode($this->add_model->upload_image());    }
 }

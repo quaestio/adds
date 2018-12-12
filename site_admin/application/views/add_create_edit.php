@@ -78,11 +78,18 @@
 								  <div class="col-xs-12">
 								 		<div class="form-group">
 		                                     <label for="">Organization/Customer</label>
-		                                      <input type="text" placeholder="" id="org_name" name="org_name" value="<?=@$form_data['org_name'] ?>" class="form-control">
+		                                      <input type="text" placeholder="" id="first_name" name="first_name" value="<?=@$form_data['first_name'] ?>" class="form-control">
 		                                      <input type="hidden" placeholder="" id="customer_id" name="customer_id" value="<?=@$form_data['customer_id'] ?>" class="form-control">
 		                                 </div>
                                   </div>
-		                                
+		                           <div class="col-xs-12">
+		                              	<div class="form-group">
+                                     		<label for="">Add-Title</label>
+                                     		<input type="text" placeholder="" id="add_title" name="add_title" value="<?=@$form_data['add_title'] ?>" class="form-control">
+                                      		
+                                 		</div> 
+                                	</div>	
+		                           
                             		<div class="col-xs-12">
 		                              	<div class="form-group">
                                      		<label for="">Description</label>
@@ -91,22 +98,19 @@
                                 	</div>
                                     <div class="col-xs-12">
 		                              	<div class="form-group">
-                                     		<label for="">Add-Title</label>
-                                      		<textarea placeholder="" id="add_title" name="add_title" class="form-control"><?=@$form_data['add_title'];?></textarea>
+                                     		<label for="">Address line 1</label>
+                                     		<input type="text" placeholder="" id="address_line_1" name="address_line_1" value="<?=@$form_data['address_line_1'] ?>" class="form-control">
+                                      		
                                  		</div> 
-                                	</div>									
-                                    <div class="col-xs-6">
+                                	</div>				
+                                	 <div class="col-xs-6">
 								 		<div class="form-group">
-		                                     <label for="">City</label>
-											 <select name="city_id" id="city_id" class="form-control">
-											 <option value=''>select city</option>
-											 <?php 
-											 foreach($cty as $items)
-											 echo'<option value="'.$items['city_id'].'">'.$items['city_name'].'</option>';
-											 ?>
-											 </select>
-		                                </div>
-                                  </div>
+		                                     <label for="">Add Target City</label>
+		                                      <input type="text" placeholder="" id="city_name" name="city_name" value="<?=@$form_data['city_name'] ?>" class="form-control">
+		                                      <input type="hidden" placeholder="" id="city_id" name="city_id" value="<?=@$form_data['city_id'] ?>" class="form-control">
+		                                 </div>
+                                  </div>					
+                                    
                                    <div class="col-xs-6">
 								 		<div class="form-group">
 		                                     <label for="">Pincode</label>
@@ -114,12 +118,7 @@
 		                                 </div>
                                   </div>								  
                                                               
-                                  <div class="col-xs-6">
-								 		<div class="form-group">
-		                                     <label for="">Web Site</label>
-		                                      <input type="text" placeholder="" id="link" name="link" value="<?=@$form_data['link'] ?>" class="form-control">
-		                                 </div>
-                                  </div>
+                                  
 								  <div class="col-xs-6">
 								 		<div class="form-group">
 		                                     <label for="">Latitude</label>
@@ -134,8 +133,14 @@
                                   </div>
                                   <div class="col-xs-6">
 								 		<div class="form-group">
+		                                     <label for="">Web Site</label>
+		                                      <input type="text" placeholder="" id="link" name="link" value="<?=@$form_data['link'] ?>" class="form-control">
+		                                 </div>
+                                  </div>
+                                  <div class="col-xs-6">
+								 		<div class="form-group">
 		                                     <label for="">Impression(Adds order)</label>
-		                                      <input type="bumber" placeholder="" id="impression" name="impression" value="<?=@$form_data['impression'] ?>" class="form-control">
+		                                      <input type="text" placeholder="" id="impression" name="impression" value="<?=@$form_data['impression'] ?>" class="form-control">
 		                                 </div>
                                   </div>
                                   <div class="col-xs-6">
@@ -150,19 +155,7 @@
     		                                     <input type="text" id='to_date' name=to_date class="form-control date" value="<?=@$form_data['to_date'];?>" />
     		                                 </div>
         		                         </div>
-        		                         <div class="col-md-6"><div class="form-group"><label class=""><input id="home_page" name="home_page" type="checkbox" <?= $form_data['home_page']=="Y"?' checked ':'';?>> Home Page</label></div></div>
-        		                         <div class="col-md-6"><div class="form-group"><label class=""><input id="login_page" name="login_page" type="checkbox" <?= @$form_data['login_page']=="Y"?' checked ':'';?>> Login Page</label></div></div>
-        		                         <div class="col-md-6"><div class="form-group"><label class=""><input id="register_page" name="register_page" type="checkbox" <?= @$form_data['register_page']=="Y"?' checked ':'';?>> Registration Page</label></div></div>
-        		                         <div class="col-md-6"><div class="form-group"><label class=""><input id="contactus_page" name="contactus_page" type="checkbox" <?= $form_data['contactus_page']=="Y"?' checked ':'';?>> Contact Us Page</label></div></div>
-        		                         <div class="col-md-6"><div class="form-group"><label class=""><input id="tenders" name="tenders" type="checkbox" <?= $form_data['tenders']=="Y"?' checked ':'';?>> Tender List Page</label></div></div>
-        		                         <div class="col-md-6"><div class="form-group"><label class=""><input id="tender_details" name="tender_details" type="checkbox" <?= $form_data['tender_details']=="Y"?' checked ':'';?>> Tender Details Page</label></div></div>
-        		                         <!-- div class="col-md-12">
-                                
-    		                                <div class="form-group">
-    		                                     <label for="">Addl. Info for admin purpose</label>
-    		                                     <textarea type="text" id='meta_details' name='meta_details' class="form-control"><?=@$form_data['meta_details'];?></textarea>
-    		                                 </div>
-        		                         </div-->
+        		                         
         		                   
                                   </div><!-- /.box-body --> 
                                 
@@ -217,21 +210,23 @@
 <script src="<?=base_url();?>js/jquery.validate.min.js"></script>
         
      <script type="text/javascript">
-     $("#org_name").mcautocomplete({
+     $("#first_name").mcautocomplete({
 		    // These next two options are what this plugin adds to the autocomplete widget.
 		    showHeader: true,
 		    columns: [
-		      	    {name: 'ORGANIZATION', width: '200px',valueField: 'org_name'}, 
+		      	    {name: 'ORGANIZATION', width: '200px',valueField: 'first_name'}, 
 		      	  	
 		    		
 		    		],
 
 		    // Event handler for when a list item is selected.
 		    select: function (event, ui) {
-		    	  this.value = (ui.item ? ui.item.org_name : '');
-		    		$('#org_name').val(ui.item.org_name);
+		    	  this.value = (ui.item ? ui.item.first_name : '');
+		    		$('#first_name').val(ui.item.first_name);
 		    		$('#customer_id').val(ui.item.customer_id);
-		    		$('#add_description').focus();
+		    		$('#address_line_1').val(ui.item.address_line_1);
+		    		$('#pin_code').val(ui.item.zip);
+		    		$('#add_title').focus();
 		    		 return false;
 		          
 		    },
@@ -242,7 +237,46 @@
 		        $.ajax({
 		            url: '<?=base_url();?>add_manager/customer_hint',
 		            dataType: "json",
-		            data: { searchText: request.term, maxResults: 100 },
+		            data: { searchText: request.term, maxResults: 20 },
+		          
+		            // The success event handler will display "No match found" if no items are returned.
+		            success: function (data) {
+		               
+		                    result = data;
+		                
+		                response(result);
+		            }
+		        });
+		    }
+		});
+     $("#city_name").mcautocomplete({
+		    // These next two options are what this plugin adds to the autocomplete widget.
+		    showHeader: true,
+		    columns: [
+		      	    {
+			      	    name: 'CITY', width: '200px',valueField: 'city_name'}, 
+		      	  	
+		    		
+		    		],
+
+		    // Event handler for when a list item is selected.
+		    select: function (event, ui) {
+		    	  this.value = (ui.item ? ui.item.city_name : '');
+		    		$('#city_name').val(ui.item.city_name);
+		    		$('#city_id').val(ui.item.city_id);
+		    		
+		    		$('#pin_code').focus();
+		    		 return false;
+		          
+		    },
+
+		    // The rest of the options are for configuring the ajax webservice call.
+		    minLength: 1,
+		    source: function (request, response) {
+		        $.ajax({
+		            url: '<?=base_url();?>add_manager/city_hint',
+		            dataType: "json",
+		            data: { searchText: request.term, maxResults: 20 },
 		          
 		            // The success event handler will display "No match found" if no items are returned.
 		            success: function (data) {

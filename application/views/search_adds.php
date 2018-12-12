@@ -268,7 +268,7 @@ function load_comment(){
 			len =Object.keys(t).length;
 		
 			TimeLineData="";
-			
+			//alert(len);
 			for (var i = 0;  i < len; ++i) {
 				TimeLineData= TimeLineData + '<div class="col-xl-4 col-lg-6 col-md-6">'+
 				'<div class="strip grid">'+

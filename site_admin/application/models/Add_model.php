@@ -13,7 +13,7 @@ class Add_model extends CI_Model {
     }
     public function add_list($start,$limit){
        
-        $sql="select add_id,org_name, add_description, link, from_date, to_date, img_1, img_2, img_3, updated_by, DATE_FORMAT(add_manager.date_updated, '%d %b %y') as dt,add_manager.updated_by,add_manager.is_active
+        $sql="select add_id,first_name, add_description, link, from_date, to_date, img_1, img_2, img_3, updated_by, DATE_FORMAT(add_manager.date_updated, '%d %b %y') as dt,add_manager.updated_by,add_manager.is_active
         from add_manager LEFT JOIN customers ON add_manager.customer_id=customers.customer_id  where  add_manager.deleted='N' order by add_id desc limit $start,$limit ";
       
         return $this->db->query($sql)->result_array();
@@ -73,7 +73,14 @@ class Add_model extends CI_Model {
    
     public function customer_hint()
     {
-        $sql="select first_name,customer_id from customers where org_name like '%".$this->input->get('searchText')."%' order by org_name limit 0,10";
+        $sql="select first_name,customer_id,address_line_1,zip from customers where first_name like '%".$this->input->get('searchText')."%' order by first_name limit 0,10";
+        return $this->db->query($sql)->result_array();
+                
+                
+    }
+    public function city_hint()
+    {
+        $sql="select city_name,city_id from cities where city_name like '%".$this->input->get('searchText')."%' order by city_name limit 0,10";
         return $this->db->query($sql)->result_array();
                 
                 
@@ -81,7 +88,7 @@ class Add_model extends CI_Model {
    
     public function get_add_by_id($add_id)
     {
-        $sql="select A.*,C.first_name from add_manager A,customers C where A.customer_id=C.customer_id and add_id=".$add_id;
+        $sql="select A.*,C.first_name,L.city_id,L.city_name from add_manager A,customers C, cities L where A.customer_id=C.customer_id and L.city_id=A.city_id and add_id=".$add_id;
         return $this->db->query($sql)->row_array();
                 
                 

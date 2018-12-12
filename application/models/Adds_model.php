@@ -54,7 +54,7 @@ class Adds_model extends CI_Model {
                    
                     
                       
-                    $array_index+1;
+                    $array_index=$array_index+1;
                 
             }
             
