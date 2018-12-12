@@ -41,7 +41,7 @@
 		   <div class="container">
 			   <div class="row">
 				   <div class="col-lg-3 col-md-4 col-10">
-					   <h4><strong>145</strong> result for All listing</h4>
+					   <h4><strong><?=$rc?></strong> result for All listing</h4>
 				   </div>
 				   <div class="col-lg-9 col-md-8 col-2">
 					   <a href="#0" class="side_panel btn_search_mobile"></a> <!-- /open search panel -->
@@ -209,7 +209,7 @@
 	
 	
 	<div id="toTop"></div><!-- Back to top button -->
-	
+	<script type="text/javascript"> var base_url='<?=base_url()?>';</script>
 	<!-- COMMON SCRIPTS -->
     <script src="<?=base_url()?>js/common_scripts.js"></script>
 	<script src="<?=base_url()?>js/functions.js"></script>
@@ -217,6 +217,10 @@
 
 	
   <script type="text/javascript">
+$('#s_s_cat').val('<?=$category?>');
+$('#s_cat').val('<?=$category?>');
+
+  
 $('#btnSearch').click(function(e){
 	e.preventDefault();
 	var s_txt =$('#s_txt').val()==""?'All':$('#s_txt').val();
@@ -235,6 +239,7 @@ $('#btnSearchComp').click(function(e){
 
 	
 });
+
 
 var rc=<?=$rc?>;
 var offset=0;

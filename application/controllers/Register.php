@@ -14,7 +14,7 @@ class Register extends CI_Controller {
     
     public function index()
     {
-        $data['categories'] = $this->common_model-> categories();
+            $data['categories'] = $this->common_model-> categories();
             $data['top_menu'] = $this->common_model-> menues(); 
              $data['country_list'] = $this->common_model-> country_list(); 
            

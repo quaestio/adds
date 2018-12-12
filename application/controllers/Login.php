@@ -11,8 +11,7 @@ class Login extends CI_Controller {
     }
     public function index(){
         $data['top_menu'] = $this->common_model-> menues(); 
-        $data['adds'] = $this->common_model-> adds('login_page');
-       
+             
         if($this->input->post('btnSubmit')=='Sign in')
         {
             if($this->login_model->check_login())

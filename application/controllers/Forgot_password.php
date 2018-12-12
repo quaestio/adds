@@ -11,8 +11,7 @@ class Forgot_password extends CI_Controller {
     }
     public function index(){
         $data['top_menu'] = $this->common_model-> menues(); 
-        $data['adds'] = $this->common_model-> adds('login_page');
-       $this->load->view('forgot_password',$data);
+        $this->load->view('forgot_password',$data);
     }
    
    

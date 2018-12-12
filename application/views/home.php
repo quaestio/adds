@@ -326,7 +326,7 @@
 	
 	
 	<div id="toTop"></div><!-- Back to top button -->
-	
+	<script type="text/javascript"> var base_url='<?=base_url()?>';</script>
 	<!-- COMMON SCRIPTS -->
     <script src="<?=base_url()?>js/common_scripts.js"></script>
 	<script src="<?=base_url()?>js/functions.js"></script>

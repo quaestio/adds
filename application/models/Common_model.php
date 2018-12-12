@@ -163,15 +163,7 @@ class Common_model extends CI_Model
             return true;
 		  } 
     }
-	public function adds($position_name){
-        $sql="select A.add_id,A.add_description,A.link,A.img_1,C.org_name from add_manager A,customers C 
-        where A.customer_id=C.customer_id 
-            and ( NOW() between from_date and to_date ) 
-            and ".$position_name."='Y'
-            order by impression desc";
-       
-        return $this->db->query($sql)->result_array();
-    }
+	
 }
    
 ?>

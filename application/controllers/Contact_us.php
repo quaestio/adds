@@ -16,11 +16,9 @@ class Contact_us extends CI_Controller {
     {
         
             $data['top_menu'] = $this->common_model-> menues(); 
-            $data['adds'] = $this->common_model-> adds('contactus_page');
-             if($this->input->post('enquiry_submit')=="")
-            {
+           if($this->input->post('enquiry_submit')=="")
                 $this->load->view('contact_us',$data);
-            }
+            
             else
             {
                 $form_data=array(
