@@ -12,11 +12,7 @@ function temp_image_id()
 	$sec = date('s', time());
 	return $year.$month.$day.$hour.$min.$sec.rand(99,9999);
 }
-function validateDate($date, $format = 'Y-m-d H:i:s')
-{
-    $d = DateTime::createFromFormat($format, $date);
-    return $d && $d->format($format) == $date;
-}
+
 function print_seo_link($url){
     $seo_patterns = array('/[^a-zA-Z0-9 -]/', '/[ -]+/', '/^-|-$/','/quot/');
     $seo_replace = array('', '-', '', '');

@@ -190,14 +190,13 @@
 
 		<div class="container margin_60_35">
 			
-			<div class="row">
-				<?= $adds?>
-				<!-- /strip grid -->
+			<div class="row" id="AddsContent">
+				
 				
 			</div>
 			<!-- /row -->
 			
-			<p class="text-center"><a href="#0" class="btn_1 rounded add_top_30">Load more</a></p>
+			<p class="text-center"><a href="#0" class="btn_1 rounded add_top_30" id="loadButton">Load more</a></p>
 			
 		</div>
 		<!-- /container -->
@@ -216,11 +215,7 @@
 	<script src="<?=base_url()?>js/functions.js"></script>
 	<script src="<?=base_url()?>assets/validate.js"></script>
 
-	<!-- Map -->
-	<script src="http://maps.googleapis.com/maps/api/js"></script>
-	<script src="<?=base_url()?>js/markerclusterer.js"></script>
-	<script src="<?=base_url()?>js/map.js"></script>
-	<script src="<?=base_url()?>js/infobox.js"></script>
+	
   <script type="text/javascript">
 $('#btnSearch').click(function(e){
 	e.preventDefault();
@@ -241,6 +236,74 @@ $('#btnSearchComp').click(function(e){
 	
 });
 
+var rc=<?=$rc?>;
+var offset=0;
+var limit=10;
+var loading=false;
+var defaultBtnText = "Load More";
+var buttonLoadingText = "<img src='<?=base_url()?>img/loading.gif' alt='' /> Loading..";
+
+$(document).scroll(function(){ 
+    if ($(window).scrollTop() + $(window).height() >= $(document).height()) 
+    	 if(rc > offset)
+		       load_comment();
+    	 else 
+    		 $("#loadButton").hide();
+    });
+$(window).bind("load", function() {	load_comment()});
+function load_comment(){
+	
+	$.ajax({
+		url: "<?php echo base_url();?>adds/load_adds/<?=$city?>/<?=$category?>/"+offset+"/"+limit,
+		type: "POST",
+		data:{},
+		
+		dataType:'json',
+		success: function(t){	
+			len =Object.keys(t).length;
+		
+			TimeLineData="";
+			
+			for (var i = 0;  i < len; ++i) {
+				TimeLineData= TimeLineData + '<div class="col-xl-4 col-lg-6 col-md-6">'+
+				'<div class="strip grid">'+
+					'<figure>'+
+						'<a href="#0" class="wish_bt"></a>'+
+						'<a href="<?=base_url()?>"><img src="<?=base_url()?>site_img/adds/'+t[i]['img_1']+'" class="img-fluid" alt="'+t[i]['add_title']+'"><div class="read_more"><span>Read more</span></div></a>'+
+						'<small>'+t[i]['category_name']+'</small>'+
+					'</figure>'+
+					'<div class="wrapper">'+
+						'<h3><a href="<?=base_url()?>adds/details/'+t[i]['url']+'/'+t[i]['add_id']+'" title="'+t[i]['add_title']+'">'+t[i]['add_title']+'</a></h3>'+
+						'<small>'+t[i]['add_title']+'</small>'+
+						'<p>'+t[i]['add_description']+'</p>'+
+						'<a class="address" href="<?=base_url()?>adds/details/'+t[i]['url']+'/'+t[i]['add_id']+'" target="_blank">Get directions</a>'+
+					'</div>'+
+					'<ul>'+
+						'<li><span class="loc_open"><a href="<?=base_url()?>adds/details/'+t[i]['url']+'/'+t[i]['add_id']+'">Details</a></span></li>'+
+						'<li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li>'+
+					'</ul>'+
+				'</div>'+
+			'</div>';
+			
+               }//adds DETAILS
+					$("#AddsContent").append(TimeLineData); 
+			offset=offset+limit;
+			if(rc < offset)
+			 {
+				 $("#loadButton").hide();
+				
+
+				 }
+			},
+			 complete: function(data){
+				
+				 loading=false;
+				 offset=offset+limit;
+				 
+				 },
+			error: function(e) {}
+				});
+	}
 
 </script>
 </body>

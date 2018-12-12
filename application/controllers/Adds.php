@@ -12,10 +12,17 @@ class Adds extends CI_Controller {
 	{
 	   $this->search_adds('all','all');
 	}
+	
 	public function search_adds($city="",$category="")
 	{
+	    $data['category'] = $category;
+	    $data['city'] = $city;
 	    $data['categories'] = $this->common_model-> categories();
-	    $data['adds'] = $this->adds_model-> adds($city,$category);
+	    $data['rc'] = $this->adds_model-> record_count($city,$category);
 	    $this->load->view('search_adds',$data);
+	}
+	public function load_adds($city="",$category="",$offset,$limit)
+	{
+	    echo json_encode($this->adds_model->adds($city,$category,$offset,$limit));	    
 	}
 }
