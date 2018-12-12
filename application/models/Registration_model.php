@@ -32,7 +32,7 @@ class Registration_model extends CI_Model {
 	public function check_duplicate($email)
 	{
 		
-		$this->db->where('email_primary',$email);
+		$this->db->where('email',$email);
 		$query=$this->db->get('customers');
 		if($query->num_rows()>0)			
 	 		return true;
@@ -83,6 +83,11 @@ class Registration_model extends CI_Model {
 	public function customers(){
 	    $sql="select * from customers where MD5(customer_id)='".$this->input->post('cid')."'" ;
 	    return $this->db->query($sql)->row_array();;
+	    
+	}
+	public function email_mobile_stat($cid){
+	    $sql="select email_verified, mobile_verified from customers where MD5(customer_id)='".$cid."'";
+	    return $this->db->query($sql)->row_array();
 	    
 	}
 }//class

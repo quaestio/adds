@@ -1,4 +1,4 @@
-<header class="header_in">
+<header class="header_in ">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-12">
@@ -25,6 +25,7 @@
 					<nav id="menu" class="main-menu">
                         <ul>
                             <li><span><a href="<?=base_url()?>">Home</a></span>
+                            <li><span><a href="<?=base_url()?>register">Register</a></span>
                                
                             </li>
                            

@@ -1,0 +1,32 @@
+
+DROP TABLE IF EXISTS `customers`;
+CREATE TABLE IF NOT EXISTS `customers` (
+  `customer_id` int(5) NOT NULL AUTO_INCREMENT,
+  `reg_type` varchar(1) NOT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `address_line_1` varchar(200) DEFAULT NULL,
+  `address_line_2` varchar(200) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `state_id` int(11) DEFAULT NULL,
+  `zip` varchar(10) DEFAULT NULL,
+  `country_id` int(11) DEFAULT NULL,
+  `country` varchar(255) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(200) NOT NULL,
+  `pass` varchar(20) NOT NULL,
+  `image_id` varchar(50) NOT NULL,
+  `restricted` varchar(1) NOT NULL DEFAULT 'N',
+  `lastlogin` date DEFAULT NULL,
+  `lastupdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `identity_verified` varchar(1) NOT NULL,
+  `identity_document` varchar(50) NOT NULL,
+  `identity_message` varchar(500) NOT NULL,
+  `identity_uploaded` varchar(1) NOT NULL DEFAULT 'N',
+  `date_register` date NOT NULL,
+  `mobile_otp` varchar(10) NOT NULL,
+  `email_otp` varchar(10) NOT NULL,
+  `email_verified` varchar(1) NOT NULL DEFAULT 'N',
+  `mobile_verified` varchar(1) NOT NULL DEFAULT 'N',
+  PRIMARY KEY (`customer_id`),
+  KEY `customer_id` (`customer_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
