@@ -7,11 +7,10 @@ class Category_model extends CI_Model
 	{	
 		$parentID=$this->input->get('ParentID')!=""?$this->input->get('ParentID'):-1; 
 		$lbl=$this->input->get('lbl')!=""?$this->input->get('lbl'):0;
-		$this->db->select('category_id,lavel,parent_id,category_name,catorder,category.article_id,last_updated,category.updated_by,date_added,article_title');
+		$this->db->select('category_id,lavel,parent_id,category_name,catorder,last_updated,category.updated_by,date_added,page_title,seo_url,key_word,page_description');
 		$this->db->where('parent_id',$parentID);
 		$this->db->where('lavel',$lbl);
 		$this->db->from('category');
-		$this->db->join('articles', 'articles.article_id = category.article_id', 'left');
 		$this->db->order_by('category_name');
 	
 		return $this->db->get()->result_array();
@@ -21,15 +20,15 @@ class Category_model extends CI_Model
 	public function category_save()
 	{
 		$parentID=$this->input->post('parent_id');
-		$article_id=$this->input->post('article_id');
-		$category_id=$this->input->post('category_id');
+	    $category_id=$this->input->post('category_id');
 		$lavel=$this->input->post('lavel');
 		$category_name=trim($this->input->post('category_name'));
+		$seo_url=trim($this->input->post('seo_url'));
 		$catorder=trim($this->input->post('catorder'));
 		
 			
 		$this->db->where('parent_id',$parentID);
-		$this->db->where('lavel',$lavel);
+		$this->db->where('seo_url',$seo_url);
 		$this->db->where('category_name',$category_name);
 		$query=$this->db->get('category');
 		if($query->num_rows()>0)
@@ -41,10 +40,12 @@ class Category_model extends CI_Model
 			$obj = array(
 				
 				'lavel' => $lavel,
-				'article_id' => $article_id,
 				'parent_id' => $parentID,
 				'category_name' => $category_name,
 				'catorder' => $catorder,
+			    'seo_url' => trim($this->input->post('seo_url')),
+			    'key_word' => trim($this->input->post('key_word')),
+			    'page_description' => trim($this->input->post('page_description')),
 				'updated_by' => $this->session->userdata('user_name'),
 				'date_added' => date('Y-m-d')
 			);
@@ -63,17 +64,18 @@ class Category_model extends CI_Model
 	}
 	
 	public function category_update()
-	{	$article_id=$this->input->post('article_id');
+	{	
 		$parentID=$this->input->post('parent_id');
 		$category_id=$this->input->post('category_id');
 		$lavel=$this->input->post('lavel');
 		$category_name=trim($this->input->post('category_name'));
+		$seo_url=trim($this->input->post('seo_url'));
 		$catorder=trim($this->input->post('catorder'));
 		$category_id=$this->input->post('category_id');
 		
 	
 		$this->db->where('parent_id',$parentID);
-		$this->db->where('lavel',$lavel);
+		$this->db->where('seo_url',$seo_url);
 		$this->db->where('category_name',$category_name);
 		$this->db->where('category_id !=',$category_id);
 		$query=$this->db->get('category');
@@ -83,12 +85,18 @@ class Category_model extends CI_Model
 		}
 		else 
 		{
-			$obj = array(
-				'category_name' => $category_name,
-				'article_id' => $article_id,
-				'catorder' => $catorder,
-				'updated_by' => $this->session->userdata('person_name'),
-			);
+		    $obj = array(
+		        
+		        'lavel' => $lavel,
+		        'parent_id' => $parentID,
+		        'category_name' => $category_name,
+		        'catorder' => $catorder,
+		        'seo_url' => trim($this->input->post('seo_url')),
+		        'key_word' => trim($this->input->post('key_word')),
+		        'page_description' => trim($this->input->post('page_description')),
+		        'updated_by' => $this->session->userdata('user_name')
+		        
+		    );
 			$this->db->where('category_id',$category_id);
 			if($this->db->update('category',$obj))
 			{

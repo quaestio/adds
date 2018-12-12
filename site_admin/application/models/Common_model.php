@@ -32,7 +32,7 @@ class Common_model extends CI_Model {
 	    return $query = $this->db->query($sql)->result_array();
 	}
 	function customers(){
-	    $sql="select customer_id,reg_type,org_name from customers where identity_verified='Y' and(reg_type='C' or reg_type='S') order  by org_name ";
+	    $sql="select customer_id,reg_type,first_name from customers where identity_verified='Y' and(reg_type='C' or reg_type='S') order  by first_name ";
 	    return $query = $this->db->query($sql)->result_array();
 	}
 	public function country_list()

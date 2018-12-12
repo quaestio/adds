@@ -73,7 +73,7 @@ class Add_model extends CI_Model {
    
     public function customer_hint()
     {
-        $sql="select org_name,customer_id from customers where org_name like '%".$this->input->get('searchText')."%' order by org_name limit 0,10";
+        $sql="select first_name,customer_id from customers where org_name like '%".$this->input->get('searchText')."%' order by org_name limit 0,10";
         return $this->db->query($sql)->result_array();
                 
                 
@@ -81,7 +81,7 @@ class Add_model extends CI_Model {
    
     public function get_add_by_id($add_id)
     {
-        $sql="select A.*,C.org_name from add_manager A,customers C where A.customer_id=C.customer_id and add_id=".$add_id;
+        $sql="select A.*,C.first_name from add_manager A,customers C where A.customer_id=C.customer_id and add_id=".$add_id;
         return $this->db->query($sql)->row_array();
                 
                 

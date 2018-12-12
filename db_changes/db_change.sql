@@ -30,3 +30,8 @@ CREATE TABLE IF NOT EXISTS `customers` (
   PRIMARY KEY (`customer_id`),
   KEY `customer_id` (`customer_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+ALTER TABLE `add_manager` ADD `org_name` VARCHAR( 200 ) NULL AFTER `customer_id` ;
+ALTER TABLE `category` CHANGE `article_id` `page_title` VARCHAR( 200 ) NOT NULL ;
+
+ALTER TABLE `category` ADD `seo_url` VARCHAR( 100 ) NOT NULL AFTER `page_title` ,ADD `key_word` VARCHAR( 200 ) NOT NULL AFTER `seo_url` ,ADD `page_description` VARCHAR( 500 ) NOT NULL AFTER `key_word`;

@@ -17,7 +17,7 @@
 	<ul class="sidebar-menu">
 		<li class="active"><a href="<?=base_url();?>home"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 		<li class="active"><a href="<?=base_url();?>menu"><i class="fa fa-dashboard"></i> <span>Site Menus</span></a></li>
-		<li class="active"><a href="<?=base_url();?>categories"><i class="fa fa-dashboard"></i> <span>Site Categories</span></a></li>
+		<li class="active"><a href="<?=base_url();?>categories"><i class="fa fa-dashboard"></i> <span>Add Categories</span></a></li>
 		<li class="treeview"><a href="#"><i class="fa fa-globe"></i><span>GEO Locations</span><i class="fa pull-right fa-angle-down"></i></a>
         	<ul class="treeview-menu">
         			<li><a href="<?=base_url();?>countries"><i class="fa fa-th"></i> <span>Countries</span></a></li>

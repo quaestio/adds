@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Site Categories</title>
+        <title>Add Categories</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="<?= base_url();?>css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -33,7 +33,7 @@
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>Site Categories </h1>
+                    <h1>Add Categories </h1>
                     <ol class="breadcrumb">
                         <li><a href="<?=base_url();?>"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li class="active">Site Categories</li>
@@ -64,7 +64,7 @@
 											<tr>
 												
 												<th>Site Categories Name</th>
-												<th>Article</th>
+												<th>SEO URL</th>
 												<th>Created By</th>
 												<th>Last updated</th>
 												<th>Date Created</th>
@@ -77,7 +77,7 @@
 										?>
 											<tr>
 												<td><?=$items['category_name'] ?></td>
-												<td><?=$items['article_title'] ?></td>
+												<td><?=$items['seo_url'] ?></td>
 												<td><?=$items['updated_by'] ?></td>
 												<td><?=$items['last_updated'] ?></td>
 												<td><?=$items['date_added'] ?></td>
@@ -85,7 +85,13 @@
 												<?php if($this->input->get('lbl')<1){?>
 													<a class="btn btn-xs btn-default add-tooltip btnSub" data-toggle="tooltip" href="<?=base_url()?>categories?ParentID=<?=$items['category_id']?>&lbl=<?=$items['lavel']+1?>" data-original-title="Sub Category" data-container="body"><i class="fa fa-list"></i> Sub Site Categories</a>
 													<?php }?>
-													<a class="btn btn-xs btn-default add-tooltip btnEdit" data-toggle="tooltip" data-id="<?=$items['category_id'] ?>" data-value="<?=$items['category_name'] ?>" catorder="<?=$items['catorder'] ?>" article_id="<?=$items['article_id'] ?>"  href="#" data-original-title="Edit" data-container="body"><i class="fa fa-pencil"></i> Edit</a>
+													<a class="btn btn-xs btn-default add-tooltip btnEdit" data-toggle="tooltip" data-id="<?=$items['category_id'] ?>" 
+													data-value="<?=$items['category_name'] ?>" 
+													catorder="<?=$items['catorder'] ?>" 
+													page_title="<?=$items['page_title'] ?>" 
+													seo_url=="<?=$items['seo_url'] ?>" 
+													key_word=="<?=$items['key_word'] ?>" 
+													page_description=="<?=$items['page_description'] ?>"  href="#" data-original-title="Edit" data-container="body"><i class="fa fa-pencil"></i> Edit</a>
 													<a class="btn btn-xs btn-danger add-tooltip btnDelete" data-toggle="tooltip" data-id="<?=$items['category_id'] ?>" href="#" data-original-title="Delete" data-container="body"><i class="fa fa-pencil"></i> Delete</a>
 													
 												</td>
@@ -114,7 +120,7 @@
 					<button data-dismiss="modal" class="close" type="button">
 					<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title">Site Categories</h4>
+					<h4 class="modal-title">Adds Categories</h4>
 				</div>
 				<!--Modal body-->
 				<div class="modal-body">
@@ -125,30 +131,36 @@
 						<form class="form-horizontal" id="frm">
 							<div class="panel-body">
 								<div class="form-group">
-									<label for="category_name" class="col-sm-3 control-label">Menu Name</label>
+									<label for="category_name" class="col-sm-5 control-label">Add Category Name</label>
 									<div class="col-sm-7">
 										<input type="text" class="form-control" id="category_name" name="category_name" placeholder="Name">
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="catorder" class="col-sm-3 control-label">Menu Order</label>
+									<label for="catorder" class="col-sm-5 control-label">Add Category Order</label>
 									<div class="col-sm-7">
 										<input type="text" class="form-control" id="catorder" name="catorder" placeholder="Order">
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="catorder" class="col-sm-3 control-label">Select Article</label>
+									<label for="catorder" class="col-sm-5 control-label">Category Url(unique)</label>
 									<div class="col-sm-7">
-										<select class="form-control" id="article_id" name="article_id">
-										<option value="0">Select a article</option>
-										<?php 
-										foreach($articles as $items){
-												echo'<option value="'.$items['article_id'].'">'.$items['article_title'].'</option>';
-										}
-										?>
-										</select>
+										<input type="text" class="form-control" id="seo_url" name="seo_url" placeholder="">
 									</div>
 								</div>
+								<div class="form-group">
+									<label for="catorder" class="col-sm-5 control-label">Category Url Keyword</label>
+									<div class="col-sm-7">
+										<input type="text" class="form-control" id="key_word" name="key_word" placeholder="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="catorder" class="col-sm-5 control-label">Category Page Description</label>
+									<div class="col-sm-7">
+										<input type="text" class="form-control" id="page_description" name="page_description" placeholder="">
+									</div>
+								</div>
+								
 								<input type="hidden" name="data_op" id="data_op" />
 								<input type="hidden" name="category_id" id="category_id" />
 								<input type="hidden" name="parent_id" id="parent_id" value="<?=$this->input->get('ParentID')==""?-1:$this->input->get('ParentID');?>" />
