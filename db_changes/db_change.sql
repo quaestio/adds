@@ -41,3 +41,4 @@ ALTER TABLE `add_manager` CHANGE `add_description` `add_description` VARCHAR( 50
 CHANGE `add_title` `add_title` VARCHAR( 1000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ;
 ALTER TABLE `add_manager` ADD `contacts` VARCHAR( 200 ) NOT NULL AFTER `pin_code` ;
 ALTER TABLE `add_manager` ADD `email` VARCHAR( 100 ) NOT NULL AFTER `contacts` ;
+ALTER TABLE `add_manager` ADD `hits` INT( 11 ) NOT NULL DEFAULT '0';

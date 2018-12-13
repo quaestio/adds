@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="SPARKER - Premium directory and listings template by Ansonika.">
     <meta name="author" content="Ansonika">
-    <title>DETAILS.</title>
+    <title><?=SITE_NAME; ?> | <?=$add_details['add_title'];?></title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="<?=base_url()?>img/favicon.ico" type="image/x-icon">
@@ -54,7 +54,7 @@
 		   <div class="container-fluid">
 			   <div class="row">
 				   <div class="col-10">
-					   <h4><strong>145</strong> result for All listing</h4>
+					   <h4><?=$add_details['add_title'];?></h4>
 				   </div>
 				   <div class="col-2">
 					   <a href="#0" class="search_mob btn_search_mobile map_view"></a> <!-- /open search panel -->
@@ -95,15 +95,10 @@
 				<ul class="clearfix">
 					<li>
 						<div class="switch-field">
-							<input type="radio" id="all" name="listing_filter" value="all" checked>
-							<label for="all">All</label>
-							<input type="radio" id="popular" name="listing_filter" value="popular">
-							<label for="popular">Popular</label>
-							<input type="radio" id="latest" name="listing_filter" value="latest">
-							<label for="latest">Latest</label>
+							
 						</div>
 					</li>
-					<li><a class="btn_filt_map" data-toggle="collapse" href="#filters" aria-expanded="false" aria-controls="filters" data-text-swap="Less filters" data-text-original="More filters">More filters</a></li>
+					<li><a class=""  href="javascript:window.history.back()">Back</a></li>
 				</ul>
 			</div>
 			<!-- /container -->
@@ -129,7 +124,8 @@
 									<p style="height:auto;margin-bottom:2px"><?=$add_details['add_description']?></p>
 									<p style="height:auto;margin-bottom:2px"><i class="ti-home"></i> <?=$add_details['address_line_1']?>, <?=$add_details['city_name']?>, <?=$add_details['state_name']?>, <?=$add_details['country_name']?>-<?=$add_details['pin_code']?></p>
 									<p style="height:auto;margin-bottom:2px"><i class="ti-headphone-alt"></i> <a href="tel:<?=$add_details['contacts']?>" target="_new"><?=$add_details['contacts']?></a></p>
-									<p style="height:auto;margin-bottom:2px"><i class="ti-email"></i> <a href="<?=$add_details['link']?>" target="_new"><?=$add_details['link']?></a></p>
+									<p style="height:auto;margin-bottom:2px"><i class="ti-email"></i> <a href="mailto:<?=$add_details['link']?>"><?=$add_details['email']?></a></p>
+									<p style="height:auto;margin-bottom:2px"><i class="ti-link"></i> <a href="<?=$add_details['link']?>" target="_new"><?=$add_details['link']?></a></p>
 									
 								</div>
 								<ul>
@@ -171,6 +167,18 @@
 	<script src="<?=base_url()?>js/markerclusterer.js"></script>
 	<script src="<?=base_url()?>js/listing_map.js"></script>
 	<script src="<?=base_url()?>js/infobox.js"></script> 
-  
+  <script>
+
+  $.ajax({
+		url: "<?php echo base_url();?>adds/add_hits/<?=$add_details['add_id']?>",
+		type: "POST",
+		data:{},
+		
+		dataType:'json',
+		success: function(t){},
+			 complete: function(data){},
+			error: function(e) {}
+							});
+  </script>
 </body>
 </html>

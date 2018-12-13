@@ -26,7 +26,7 @@ class Adds_model extends CI_Model {
         
          $adds="";
 		 $q=makeSafe($this->input->get('i'));
-		 $sql="select add_id,A.customer_id,A.category_id,A.add_description,A.add_title,A.city_id,A.pin_code,A.link,A.img_1,A.img_2,A.img_3,A.is_active,L.city_name ,C.category_name,A.address_line_1,A.contacts
+		 $sql="select add_id,A.customer_id,A.category_id,A.add_description,A.add_title,A.city_id,A.pin_code,A.link,A.img_1,A.img_2,A.img_3,A.is_active,L.city_name ,C.category_name,A.address_line_1,A.contacts,A.email
             from add_manager A,cities L,category C
             where A.city_id=L.city_id and C.category_id=A.category_id and add_id=".makeSafe($add_id)."
             and ( DATE_FORMAT(NOW(),'%Y-%m-%d')  between from_date and to_date )";
@@ -46,6 +46,7 @@ class Adds_model extends CI_Model {
                 $display['address_line_1']= $row['address_line_1'];
                 $display['pin_code']= $row['pin_code'];
                 $display['contacts']= $row['contacts'];
+                $display['email']= $row['email'];
                 $display['link']= $row['link'];
                 $display['img_1']= $row['img_1'];
                 $display['img_2']= $row['img_2'];
@@ -144,6 +145,12 @@ class Adds_model extends CI_Model {
 	    
 	    if($category=="" or $category!="All") $sql .= " and REPLACE(C.category_name,' ','_') ='".$category."'";
 	    return $sql;
+	    
+	}
+	public function add_hits($add_id){
+	    $this->db->where('add_id',$add_id);
+	    $sql="update add_manager set hits=hits+1 where add_id=".$add_id;
+	    $this->db->query($sql);
 	    
 	}
 

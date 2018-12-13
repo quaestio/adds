@@ -282,12 +282,12 @@ function load_comment(){
 						'<p style="height:auto;margin-bottom:2px"><i class="ti-home"></i> '+t[i]['address_line_1']+', '+t[i]['city_name']+', '+t[i]['state_name']+', '+t[i]['country_name']+'-'+t[i]['pin_code']+'</p>'+
 						'<p style="height:auto;margin-bottom:2px"><i class="ti-headphone-alt"></i> '+t[i]['contacts']+'</p>'+
 						'<p style="height:auto;margin-bottom:2px"><i class="ti-email"></i> '+t[i]['email']+'</p>'+
-						'<p style="height:auto;margin-bottom:2px"><i class="ti-web"></i> '+t[i]['link']+'</p>'+
+						'<p style="height:auto;margin-bottom:2px"><i class="ti-link"></i> <a href="'+t[i]['link']+'">'+t[i]['link']+'</a></p>'+
 						
-						'<a class="address" href="<?=base_url()?>adds/details/'+t[i]['url']+'/'+t[i]['add_id']+'" target="_blank">Get directions</a>'+
+						'<a class="address" href="<?=base_url()?>adds/details/'+t[i]['add_id']+'-'+t[i]['url']+'" target="_blank">Get directions</a>'+
 					'</div>'+
 					'<ul>'+
-						'<li><span class="loc_open"><a href="<?=base_url()?>adds/qv/'+t[i]['add_id']+'" class="simple-ajax-popup" >Quick View</a></span></li>'+
+						'<li><span class="loc_open"><a href="" class="simple-ajax-popup" >Quick View</a></span></li>'+
 						'<li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li>'+
 					'</ul>'+
 				'</div>'+

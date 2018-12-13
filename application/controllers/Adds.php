@@ -37,4 +37,8 @@ class Adds extends CI_Controller {
 	{
 	    echo json_encode($this->adds_model->adds($city,$category,$offset,$limit));	    
 	}
+	public function add_hits($add_id)
+	{
+	    $this->adds_model->add_hits($add_id);	    
+	}
 }
