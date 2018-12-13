@@ -207,7 +207,6 @@
 	<!-- page -->
 	
 	
-	
 	<div id="toTop"></div><!-- Back to top button -->
 	<script type="text/javascript"> var base_url='<?=base_url()?>';</script>
 	<!-- COMMON SCRIPTS -->
@@ -274,17 +273,21 @@ function load_comment(){
 				'<div class="strip grid">'+
 					'<figure>'+
 						'<a href="#0" class="wish_bt"></a>'+
-						'<a href="<?=base_url()?>"><img src="<?=base_url()?>site_img/adds/'+t[i]['img_1']+'" class="img-fluid" alt="'+t[i]['add_title']+'"><div class="read_more"><span>Read more</span></div></a>'+
+						'<a href="<?=base_url()?>adds/details/'+t[i]['add_id']+'-'+t[i]['url']+'"><img src="<?=base_url()?>site_img/adds/'+t[i]['img_1']+'" class="img-fluid" alt="'+t[i]['add_title']+'"><div class="read_more"><span>Read more</span></div></a>'+
 						'<small>'+t[i]['category_name']+'</small>'+
 					'</figure>'+
 					'<div class="wrapper">'+
-						'<h3><a href="<?=base_url()?>adds/details/'+t[i]['url']+'/'+t[i]['add_id']+'" title="'+t[i]['add_title']+'">'+t[i]['add_title']+'</a></h3>'+
-						'<small>'+t[i]['add_title']+'</small>'+
+						'<h3><a href="<?=base_url()?>adds/details/'+t[i]['add_id']+'-'+t[i]['url']+'" title="'+t[i]['add_title']+'">'+t[i]['add_title']+'</a></h3>'+
 						'<p>'+t[i]['add_description']+'</p>'+
+						'<p style="height:auto;margin-bottom:2px"><i class="ti-home"></i> '+t[i]['address_line_1']+', '+t[i]['city_name']+', '+t[i]['state_name']+', '+t[i]['country_name']+'-'+t[i]['pin_code']+'</p>'+
+						'<p style="height:auto;margin-bottom:2px"><i class="ti-headphone-alt"></i> '+t[i]['contacts']+'</p>'+
+						'<p style="height:auto;margin-bottom:2px"><i class="ti-email"></i> '+t[i]['email']+'</p>'+
+						'<p style="height:auto;margin-bottom:2px"><i class="ti-web"></i> '+t[i]['link']+'</p>'+
+						
 						'<a class="address" href="<?=base_url()?>adds/details/'+t[i]['url']+'/'+t[i]['add_id']+'" target="_blank">Get directions</a>'+
 					'</div>'+
 					'<ul>'+
-						'<li><span class="loc_open"><a href="<?=base_url()?>adds/details/'+t[i]['url']+'/'+t[i]['add_id']+'">Details</a></span></li>'+
+						'<li><span class="loc_open"><a href="<?=base_url()?>adds/qv/'+t[i]['add_id']+'" class="simple-ajax-popup" >Quick View</a></span></li>'+
 						'<li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li>'+
 					'</ul>'+
 				'</div>'+
@@ -309,6 +312,7 @@ function load_comment(){
 			error: function(e) {}
 				});
 	}
+
 
 </script>
 </body>

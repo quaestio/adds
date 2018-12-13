@@ -117,6 +117,18 @@
 		                                      <input type="text" placeholder="" id="pin_code" name="pin_code" value="<?=@$form_data['pin_code'] ?>" class="form-control">
 		                                 </div>
                                   </div>								  
+                                   <div class="col-xs-12">
+								 		<div class="form-group">
+		                                     <label for="">CONTACTS</label>
+		                                      <input type="text" placeholder="" id="contacts" name="contacts" value="<?=@$form_data['contacts'] ?>" class="form-control">
+		                                 </div>
+                                  </div>								  
+                                   <div class="col-xs-12">
+								 		<div class="form-group">
+		                                     <label for="">e-Mail</label>
+		                                      <input type="text" placeholder="" id="email" name="email" value="<?=@$form_data['email'] ?>" class="form-control">
+		                                 </div>
+                                  </div>								  
                                                               
                                   
 								  <div class="col-xs-6">

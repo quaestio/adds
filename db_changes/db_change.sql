@@ -36,5 +36,8 @@ ALTER TABLE `category` CHANGE `article_id` `page_title` VARCHAR( 200 ) NOT NULL 
 
 ALTER TABLE `category` ADD `seo_url` VARCHAR( 100 ) NOT NULL AFTER `page_title` ,ADD `key_word` VARCHAR( 200 ) NOT NULL AFTER `seo_url` ,ADD `page_description` VARCHAR( 500 ) NOT NULL AFTER `key_word`;
 ALTER TABLE `add_manager` ADD `address_line_1` VARCHAR( 200 ) NOT NULL AFTER `add_title` ;
-
-
+//===============================
+ALTER TABLE `add_manager` CHANGE `add_description` `add_description` VARCHAR( 500 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+CHANGE `add_title` `add_title` VARCHAR( 1000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ;
+ALTER TABLE `add_manager` ADD `contacts` VARCHAR( 200 ) NOT NULL AFTER `pin_code` ;
+ALTER TABLE `add_manager` ADD `email` VARCHAR( 100 ) NOT NULL AFTER `contacts` ;

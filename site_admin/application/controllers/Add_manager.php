@@ -70,6 +70,8 @@ class Add_manager extends CI_Controller {
 				'address_line_1' => makeSafe($this->input->post('address_line_1')),
 				'city_id' => makeSafe($this->input->post('city_id')),
 				'pin_code' => makeSafe($this->input->post('pin_code')),
+				'contacts' => makeSafe($this->input->post('contacts')),
+				'email' => makeSafe($this->input->post('email')),
                 'link' => $this->input->post('link'),
 				'lati' => makeSafe($this->input->post('lati')),
 				'longi' => makeSafe($this->input->post('longi')),

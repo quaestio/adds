@@ -1,5 +1,4 @@
-<header class="header menu_fixed">
-		<div id="logo">
+<div id="logo">
 			<a href="<?=base_url()?>" title="Your local Sear Directory">
 				<img src="<?=base_url()?>logo.png" height="35" alt="" class="logo_normal">
 				<img src="<?=base_url()?>logo.png" height="35" alt="" class="logo_sticky">
@@ -29,4 +28,3 @@
 				
 			</ul>
 		</nav>
-	</header>

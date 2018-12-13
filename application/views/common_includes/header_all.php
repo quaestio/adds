@@ -4,7 +4,7 @@
 				<div class="col-lg-3 col-12">
 					<div id="logo">
 						<a href="index.html">
-							<img src="img/logo_sticky.svg" width="165" height="35" alt="" class="logo_sticky">
+							<img src="<?=base_url()?>logo.png" height="35" alt="" class="logo_sticky">
 						</a>
 					</div>
 				</div>

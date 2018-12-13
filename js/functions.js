@@ -114,6 +114,7 @@
 	//  Video popups
 	$('.video').magnificPopup({type:'iframe'});	/* video modal*/
 	
+	
 	// Image popups
 	$('.magnific-gallery').each(function () {
 		$(this).magnificPopup({
