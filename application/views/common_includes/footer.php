@@ -1,4 +1,4 @@
-<footer class="plus_border">
+<footer class="plus_border" style="background-color:LightGray;">
 		<div class="container margin_60_35">
 			<div class="row">
 				<div class="col-lg-3 col-md-6 col-sm-6">

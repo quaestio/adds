@@ -23,6 +23,7 @@
     <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=base_url()?>css/style.css" rel="stylesheet">
 	<link href="<?=base_url()?>css/vendors.css" rel="stylesheet">
+	<link href="<?=base_url()?>css/bootstrap.css" rel="stylesheet">
 
     <!-- YOUR CUSTOM CSS -->
     <link href="<?=base_url()?>css/custom.css" rel="stylesheet">
@@ -109,14 +110,14 @@
 					<i></i></label>
 				</div>
 			
-			</div>
+			</div>&nbsp;&nbsp;
         
 		
 			<div class="row">
 				<label class="label col col-4">Name :</label>
 				<div class="col col-8">
 					<label class="input">
-						<input name="first_name" type="text" value='<?php echo @$form_data['first_name']; ?>' class="form-control">
+						<input name="first_name" type="text" placeholder="name" value='<?php echo @$form_data['first_name']; ?>' class="form-control">
 						<b class="tooltip tooltip-bottom-right">Needed to enter first name</b>
 					</label>
 				</div>
@@ -129,7 +130,7 @@
 				<label class="label col col-4">Address Line 1 :</label>
 				<div class="col col-8">
 					<label class="input">
-						<input name="address_line_1" type="text" value='<?php echo @$form_data['address_line_1']; ?>' class="form-control">
+						<input name="address_line_1" type="text" placeholder="Address Line 1" value='<?php echo @$form_data['address_line_1']; ?>' class="form-control">
 						<b class="tooltip tooltip-bottom-right">Needed to enter Address Line 1</b>
 					</label>
 				</div>
@@ -140,7 +141,7 @@
 				<label class="label col col-4">Address Line 2 :</label>
 				<div class="col col-8">
 					<label class="input">
-						<input name="address_line_2" type="text" value='<?php echo @$form_data['address_line_2']; ?>' class="st">
+						<input name="address_line_2" type="text" placeholder="Address Line 2" value='<?php echo @$form_data['address_line_2']; ?>' class="form-control">
 						<b class="tooltip tooltip-bottom-right">optional</b>
 					</label>
 				</div>
@@ -152,7 +153,7 @@
 				<label class="label col col-4">Country :</label>
 				<div class="col col-8">
 					<label class="select">
-						<select id='country' name='country'  class="st">
+						<select id='country' name='country'  class="st" style="width:200px;">
 						
 							<option value="">Select Country</option>
 							<?php foreach($country_list as $cItems)
@@ -197,7 +198,7 @@
 				<label class="label col col-4">ZIP/Postal Code :</label>
 				<div class="col col-8">
 					<label class="input">
-						<input name="zip" type="text" value='<?php echo @$form_data['zip']; ?>' class="st">
+						<input name="zip" type="text" placeholder="Postal Code" value='<?php echo @$form_data['zip']; ?>' class="st">
 						<b class="tooltip tooltip-bottom-right">zip</b>
 					</label>
 				</div>
@@ -208,7 +209,7 @@
 				<label class="label col col-4">Phone :</label>
 				<div class="col col-8">
 					<label class="input">
-						<input name="phone" type="text" value='<?php echo @$form_data['phone']; ?>' class="st">
+						<input name="phone" type="text" placeholder="Phone No" value='<?php echo @$form_data['phone']; ?>' class="st">
 						<b class="tooltip tooltip-bottom-right">phone</b>
 					</label>
 				</div>
@@ -223,7 +224,7 @@
 				<label class="label col col-4">E-Mail :</label>
 				<div class="col col-8">
 					<label class="input">
-						<input name="email" type="text" value='<?php echo @$form_data['email']; ?>' class="st">
+						<input name="email" type="text" placeholder="E-mail" value='<?php echo @$form_data['email']; ?>' class="st">
 						<b class="tooltip tooltip-bottom-right">Needed to enter E-Mail</b>
 					</label>
 				</div>
@@ -235,7 +236,7 @@
 				<label class="label col col-4">Password :</label>
 				<div class="col col-8">
 					<label class="input">
-						<input name="pass" type="password"  class="st">
+						<input name="pass" placeholder="password" type="password"  class="st">
 						<b class="tooltip tooltip-bottom-right">Needed to type Password</b>
 					</label>
 				</div>
@@ -244,7 +245,7 @@
 		
 		
 			<div class="row">
-				<div class="col col-4">Terms &amp; Conditions</div>
+				<div class="col col-4">Terms &amp; Conditions:</div>
 				<div class="col col-8">
 					<label class="checkbox"><input type="checkbox" id="ch" name="terms" value="ON">
 					<i></i><a onclick="window.open('<?=base_url()?>terms_and_conditions','popup','width=680,height=400,scrollbars=yes');popup.focus();return(false);" href="javascript:void();">I accept The Terms &amp; Conditions</a>
@@ -256,7 +257,7 @@
     
   
   <div class="row">
-				<div class="col col-4">Identify yourself</div>
+				<div class="col col-4">Identify yourself:</div>
 				<div class="col col-8">
 						<div class="g-recaptcha" data-sitekey="<?=GOOGLE_CAPTCHA_SITE_KEY?>"></div>
 						</div>
