@@ -6395,7 +6395,7 @@ a.btn_3, .btn_3 {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 9px;
   border: 1px solid #d2d8dd;
 }
 
