@@ -1,5 +1,5 @@
 <div id="logo">
-			<a href="<?=base_url()?>" title="Your local Sear Directory">
+			<a href="<?=base_url()?>" title="Your local Search Directory">
 				<img src="<?=base_url()?>logo.png" height="35" alt="" class="logo_normal">
 				<img src="<?=base_url()?>logo.png" height="35" alt="" class="logo_sticky">
 			</a>
@@ -19,9 +19,8 @@
 		</a>
 		<nav id="menu" class="main-menu">
 			<ul>
-				<li><span><a href="<?=base_url()?>">Home</a></span>
-					
-				</li>
+				<li><span><a href="<?=base_url()?>">Home</a></span></li>
+				<li><span><a href="<?=base_url()?>register">Register</a></span></li>
 				
 				
 				

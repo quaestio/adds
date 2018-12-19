@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SPARKER - Premium directory and listings template by Ansonika.">
+    <meta name="description" content="Post local facility like Doctors, Departmental Stores, Hotels, Restaurants, Cars and many more">
     <meta name="author" content="Ansonika">
-    <title>LOCAL SEARCH DIRECTORY | Premium directory and listings template by Ansonika.</title>
+    <title>Want A Facility | Local Facility Search | Post A Facility | Find anything in your Locality.</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="<?=base_url()?>img/favicon.ico" type="image/x-icon">
@@ -40,19 +40,19 @@
 		<section class="hero_single version_2">
 			<div class="wrapper">
 				<div class="container">
-					<h3>Find what you need!</h3>
-					<p>Discover top rated facilities around uoyr locality</p>
+					<h3>I want A ......!</h3>
+					<p>Discover top rated facilities around your locality</p>
 					<form method="post">
 						<div class="row no-gutters custom-search-input-2">
 							<div class="col-lg-4">
 								<div class="form-group">
-									<input class="form-control" type="text" id="s_txt" name="s_txt"  placeholder="What are you looking for...">
+									<input class="form-control" type="text" id="s_txt" name="s_txt"  placeholder="I want A...">
 									<i class="icon_search"></i>
 								</div>
 							</div>
 							<div class="col-lg-3">
 								<div class="form-group">
-									<input class="form-control" type="text" id="s_city" name="s_city" placeholder="Where">
+									<input class="form-control" type="text" id="s_city" name="s_city" placeholder="In my City">
 									<i class="icon_pin_alt"></i>
 								</div>
 							</div>
@@ -119,8 +119,8 @@
 		<div class="container margin_60_35">
 			<div class="main_title_3">
 				<span></span>
-				<h2>Famous Shops</h2>
-				<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+				<h2>Famous Stores</h2>
+				<p>This are the famous stores in your Locality</p>
 				<a href="grid-listings-filterscol.html">See all</a>
 			</div>
 			<div class="row add_bottom_30">
@@ -170,7 +170,7 @@
 			<div class="main_title_3">
 				<span></span>
 				<h2>Popular Hotels</h2>
-				<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+				<p>Here are some Hotels in Your Locality</p>
 				<a href="grid-listings-filterscol.html">See all</a>
 			</div>
 			<div class="row add_bottom_30">
@@ -224,7 +224,7 @@
 			<div class="main_title_3">
 				<span></span>
 				<h2>Top Restaurants</h2>
-				<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+				<p>Book Top Restaurants in Your Locality.</p>
 				<a href="grid-listings-filterscol.html">See all</a>
 			</div>
 			<div class="row ">
@@ -279,14 +279,14 @@
 					<div class="main_title_2">
 						<span><em></em></span>
 						<h2>How it Works</h2>
-						<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+						<p>Register and place your adds and know your Place .</p>
 					</div>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="box_how">
 								<i class="pe-7s-search"></i>
-								<h3>Search Locations</h3>
-								<p>An nec placerat repudiare scripserit, temporibus complectitur at sea, vel ignota fierent eloquentiam id.</p>
+								<h3>Search Facilities</h3>
+								<p>Select your City, Select category and get the list of facility in your locality.</p>
 								<span></span>
 							</div>
 						</div>
@@ -294,7 +294,7 @@
 							<div class="box_how">
 								<i class="pe-7s-info"></i>
 								<h3>View Location Info</h3>
-								<p>An nec placerat repudiare scripserit, temporibus complectitur at sea, vel ignota fierent eloquentiam id.</p>
+								<p>See the details and see the direction from your facility. Get it on map</p>
 								<span></span>
 							</div>
 						</div>
@@ -302,12 +302,12 @@
 							<div class="box_how">
 								<i class="pe-7s-like2"></i>
 								<h3>Book, Reach or Call</h3>
-								<p>An nec placerat repudiare scripserit, temporibus complectitur at sea, vel ignota fierent eloquentiam id.</p>
+								<p>Get the booking no and website. Ring the phone and book it</p>
 							</div>
 						</div>
 					</div>
 					<!-- /row -->
-					<p class="text-center add_top_30 wow bounceIn" data-wow-delay="0.5s"><a href="account.html" class="btn_1 rounded">Register Now</a></p>
+					<p class="text-center add_top_30 wow bounceIn" data-wow-delay="0.5s"><a href="<?=base_url()?>register" class="btn_1 rounded">Register Now</a></p>
 				</div>
 				<canvas id="hero-canvas" width="1920" height="1080"></canvas>
 			</div>

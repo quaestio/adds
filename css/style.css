@@ -633,9 +633,8 @@ a.btn_add,
   top: 2px;
 }
 @media (max-width: 991px) {
-  a.btn_add,
-  .btn_add {
-    display: none;
+  a.btn_add,  .btn_add {
+    width:100%;
   }
 }
 a.btn_add:hover,

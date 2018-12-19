@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SPARKER - Premium directory and listings template by Ansonika.">
-    <meta name="author" content="Ansonika">
-    <title>SPARKER | Premium directory and listings template by Ansonika.</title>
+    <meta name="description" content="Register with us, Post local facility like Doctors, Departmental Stores, Hotels, Restaurants and many more.">
+    <meta name="author" content="<?=COPYRIGHT?>">
+    <title>Regiater | www.wantafacility.com</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="<?=base_url()?>img/favicon.ico" type="image/x-icon">
@@ -18,13 +18,13 @@
 
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
+<link rel="stylesheet" href="<?= base_url();?>js/select2/select2.min.css">
     <!-- BASE CSS -->
     <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=base_url()?>css/style.css" rel="stylesheet">
 	<link href="<?=base_url()?>css/vendors.css" rel="stylesheet">
 	<link href="<?=base_url()?>css/bootstrap.css" rel="stylesheet">
-
+ 
     <!-- YOUR CUSTOM CSS -->
     <link href="<?=base_url()?>css/custom.css" rel="stylesheet">
     <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -66,7 +66,7 @@
 								<?php foreach($categories as $items)
 									echo '<option value="'.$items['category_name'].'">'.$items['category_name'].'</option>';
 								?>
-				</select>
+							</select>
 				
 							</div>
 							<div class="col-lg-1">
@@ -87,192 +87,174 @@
 		<div class="container margin_60_35">
 			
 			<div class="row">
-				<form name="reg-form" class="sky-form" id="reg-form" method="post" action="<?=base_url();?>register">
- 
-<?php echo @$msg; ?>
-
-<div class="header_description">Fill in the fields below to create a account. You'll be able to add place and provide various facility in  your area. Receive updates on your place visit.</div>
-<div class='header_description'>If you have an account, Please <a class="color-sea" href='<?=base_url();?>user/login' title="sign In" >SIGN IN</a>  </div>
-  <fieldset>
-  			<div class="row">
-			
-					<label class="col-md-4">I am  :</label>
-			
-					
-					<div class="col-md-4">
-						<select id='iam' name='iam' class="form-control">
-							<option value="">---Please Select---</option>
-							<option value="A">Advertiser</option>
-							<option value="U">Looking for Somtimng</option>
-						
-						</select>
-						<b class="tooltip tooltip-bottom-right">Select Registration type</b>
-					<i></i></label>
-				</div>
-			
-			</div>&nbsp;&nbsp;
-        
-		
-			<div class="row">
-				<label class="label col col-4">Name :</label>
-				<div class="col col-8">
-					<label class="input">
-						<input name="first_name" type="text" placeholder="name" value='<?php echo @$form_data['first_name']; ?>' class="form-control">
-						<b class="tooltip tooltip-bottom-right">Needed to enter first name</b>
-					</label>
-				</div>
-			</div>
-        
-		
-	
-		
-			<div class="row">
-				<label class="label col col-4">Address Line 1 :</label>
-				<div class="col col-8">
-					<label class="input">
-						<input name="address_line_1" type="text" placeholder="Address Line 1" value='<?php echo @$form_data['address_line_1']; ?>' class="form-control">
-						<b class="tooltip tooltip-bottom-right">Needed to enter Address Line 1</b>
-					</label>
-				</div>
-			</div>
-        
-		
-			<div class="row">
-				<label class="label col col-4">Address Line 2 :</label>
-				<div class="col col-8">
-					<label class="input">
-						<input name="address_line_2" type="text" placeholder="Address Line 2" value='<?php echo @$form_data['address_line_2']; ?>' class="form-control">
-						<b class="tooltip tooltip-bottom-right">optional</b>
-					</label>
-				</div>
-			</div>
-        
-		
-		
-			<div class="row">
-				<label class="label col col-4">Country :</label>
-				<div class="col col-8">
-					<label class="select">
-						<select id='country' name='country'  class="st" style="width:200px;">
-						
-							<option value="">Select Country</option>
-							<?php foreach($country_list as $cItems)
-						{
-							echo '<option value="'.$cItems['country_id'].'">'.$cItems['countries_name'].'</option>';
-							
-							
-						}?>
-						</select>
-						<b class="tooltip tooltip-bottom-right">Country</b>
-					<i></i></label>
-				</div>
-			</div>
-        
-		
-			<div class="row">
-				<label class="label col col-4">State/Province :</label>
-				<div class="col col-8">
-					<label class="select">
-						<select id='state' name='state'></select>
-     
-						<b class="tooltip tooltip-bottom-right">State/Province</b>
-					<i></i></label>
-				</div>
-			</div>
-        
-        
-			<div class="row">
-				<label class="label col col-4">City :</label>
-				<div class="col col-8">
-				<label class="select">
-						<select id='city' name='city'></select>
-     
-						<b class="tooltip tooltip-bottom-right">City/Conunty</b>
-					<i></i></label>
-					
-				</div>
-			</div>
-        
-		
-			<div class="row">
-				<label class="label col col-4">ZIP/Postal Code :</label>
-				<div class="col col-8">
-					<label class="input">
-						<input name="zip" type="text" placeholder="Postal Code" value='<?php echo @$form_data['zip']; ?>' class="st">
-						<b class="tooltip tooltip-bottom-right">zip</b>
-					</label>
-				</div>
-			</div>
-        
-		
-			<div class="row">
-				<label class="label col col-4">Phone :</label>
-				<div class="col col-8">
-					<label class="input">
-						<input name="phone" type="text" placeholder="Phone No" value='<?php echo @$form_data['phone']; ?>' class="st">
-						<b class="tooltip tooltip-bottom-right">phone</b>
-					</label>
-				</div>
-			</div>
-        
-  
- </fieldset>
- <header>LOGIN INFORMATION</header>
- <fieldset>
-		
-			<div class="row">
-				<label class="label col col-4">E-Mail :</label>
-				<div class="col col-8">
-					<label class="input">
-						<input name="email" type="text" placeholder="E-mail" value='<?php echo @$form_data['email']; ?>' class="st">
-						<b class="tooltip tooltip-bottom-right">Needed to enter E-Mail</b>
-					</label>
-				</div>
-			</div>
-        
-	
-		
-			<div class="row">
-				<label class="label col col-4">Password :</label>
-				<div class="col col-8">
-					<label class="input">
-						<input name="pass" placeholder="password" type="password"  class="st">
-						<b class="tooltip tooltip-bottom-right">Needed to type Password</b>
-					</label>
-				</div>
-			</div>
-        
-		
-		
-			<div class="row">
-				<div class="col col-4">Terms &amp; Conditions:</div>
-				<div class="col col-8">
-					<label class="checkbox"><input type="checkbox" id="ch" name="terms" value="ON">
-					<i></i><a onclick="window.open('<?=base_url()?>terms_and_conditions','popup','width=680,height=400,scrollbars=yes');popup.focus();return(false);" href="javascript:void();">I accept The Terms &amp; Conditions</a>
-					
-					</label>
-				</div>
-			</div>
-		
-    
-  
-  <div class="row">
-				<div class="col col-4">Identify yourself:</div>
-				<div class="col col-8">
-						<div class="g-recaptcha" data-sitekey="<?=GOOGLE_CAPTCHA_SITE_KEY?>"></div>
+			<div class="col-xl-6 col-lg-6 col-md-8">
+				<div class="box_account">
+				<form name="reg-form" id="reg-form" method="post" action="<?=base_url();?>register">
+					<h3 class="new_client">New Client</h3> <small class="float-right pt-2">* Required Fields</small>
+					<div class="form_container">
+					<?php echo @$msg; ?>
+						<div class="form-group clearfix">
+							<div class="custom-select-form">
+								<select class="wide add_bottom_10" name="iam" id="iam">
+										<option value="">---Please Select---</option>
+										<option value="A">Advertiser</option>
+										<option value="U">Looking for Somtimng</option>
+								</select>
+							</div>
 						</div>
+						
+						<div class="form-group">
+							<input name="first_name" type="text" placeholder="name*" value='<?php echo @$form_data['first_name']; ?>' class="form-control">
 						</div>
-					
-   
-  </fieldset>
-   <footer>
-					<input type="submit" value="Register" name="reg_submit" value="reg" class="btn btn-info pull-right"> 
-				</footer>
-	
-    
-</form>
+						<div class="form-group">
+							<input name="address_line_1" type="text" placeholder="Address Line 1*" value='<?php echo @$form_data['address_line_1']; ?>' class="form-control">
+						</div>
+						<div class="form-group">
+							<input name="address_line_2" type="text" placeholder="Address Line 2" value='<?php echo @$form_data['address_line_2']; ?>' class="form-control">
+						</div>
+						
+						
+							<div class="row no-gutters">
+								<div class="col-6 pr-1">
+									<div class="form-group">
+										<input class="form-control" name="phone" id="phone" placeholder="Mobile/Phone*" value='<?php echo @$form_data['phone']; ?>' type="text">
+									</div>
+								</div>
+								<div class="col-6 pl-1">
+									<div class="form-group">
+										<input class="form-control" name="alt_phone" id="alt_phone" placeholder="alt contact*" value='<?php echo @$form_data['alt_phone']; ?>' type="text">
+									</div>
+								</div>
+								
+							</div>
+							<!-- /row -->
+							<div class="row no-gutters">
+							
+								<div class="col-12">
+									<div class="form-group">
+										<div class="">
+											<select class="form-control select2" name="country" id="country">
+													<option value="">---Please Country---</option>
+													<?php 
+                    							foreach($country_list as $cItems)
+                    													echo '<option value="'.$cItems['country_id'].'">'.$cItems['countries_name'].'</option>';
+                    							
+                    							
+                    						?>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row no-gutters">
+							
+								<div class="col-12">
+									<div class="form-group">
+										<div class="">
+											<select class="wide add_bottom_10 form-control select2" name="state" id="state">
+													<option value="">---Please State---</option>
+													
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row no-gutters">
+								<div class="col-12">
+									<div class="form-group">
+										<div class="">
+											<select  class="wide add_bottom_10 form-control select2" name="city" id="city">
+													<option value="">---Please City---</option>
+													
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row no-gutters">
+								<div class="col-6 pr-1">
+									<div class="form-group">
+										<input class="form-control" name="zip" id="zip" placeholder="Postal Code*" value='<?php echo @$form_data['zip']; ?>' type="text">
+									</div>
+								</div>
+								
+								
+							</div>
+						
+						<hr>
+						<div class="form-group">
+							<input name="email" type="text" placeholder="Email/Login*" value='<?php echo @$form_data['email']; ?>' class="form-control">
+						</div>
+						<div class="form-group">
+							<input name="pass" id="pass" type="text" placeholder="Password*" value='' class="form-control">
+						</div>
+						<div class="form-group">
+							<input name="re_pass" id="re_pass"  type="text" placeholder="Password*" value='' class="form-control">
+						</div>
+						
+						
+						<div class="form-group">
+							<label class="container_check">Accept <a onclick="window.open('<?=base_url()?>terms_and_conditions','popup','width=680,height=400,scrollbars=yes');popup.focus();return(false);" href="javascript:void();">The Terms &amp; Conditions</a>
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<hr>
+						<div class="form-group">
+							<div class="g-recaptcha" data-sitekey="<?=GOOGLE_CAPTCHA_SITE_KEY?>"></div>
+						</div>
+						<div class="text-center"><input value="Register" class="btn_1 full-width" type="submit" name="reg_submit"></div>
+					</div>
+					<!-- /form_container -->
+					</form>
+				</div>
+				<!-- /box_account -->
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-8">
+				<div class="box_account">
+					<h3 class="client">Already Client</h3>
+					<div class="form_container">
+						<div class="row no-gutters">
+							<div class="col-lg-6 pr-lg-1">
+								<a href="#0" class="social_bt facebook">Login with Facebook</a>
+							</div>
+							<div class="col-lg-6 pl-lg-1">
+								<a href="#0" class="social_bt google">Login with Google</a>
+							</div>
+						</div>
+						<div class="divider"><span>Or</span></div>
+						<div class="form-group">
+							<input class="form-control" name="login_email" id="login_email" placeholder="Email*" type="email">
+						</div>
+						<div class="form-group">
+							<div style="position: relative; display: block; vertical-align: baseline; margin: 0px;" class="hideShowPassword-wrapper"><input style="margin: 0px; padding-right: 51px;" class="form-control hideShowPassword-field" name="password_in" id="password_in" value="" placeholder="Password*" type="password"><button aria-pressed="false" style="position: absolute; right: 0px; top: 50%; margin-top: -15px; display: none;" class="my-toggle hideShowPassword-toggle-show" tabindex="0" title="Show Password" aria-label="Show Password" role="button" type="button">Show</button></div>
+						</div>
+						<div class="clearfix add_bottom_15">
+							<div class="checkboxes float-left">
+								<label class="container_check">Remember me
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="float-right"><a id="forgot" href="javascript:void(0);">Lost Password?</a></div>
+						</div>
+						<div class="text-center"><button id="btnLogIn" name="btnLogIn" class="btn_1 full-width" >log In</button> </div>
+						<div id="forgot_pw">
+							<div class="form-group">
+								<input class="form-control" name="email_forgot_reg" id="email_forgot_reg" placeholder="Type your email" type="email">
+							</div>
+							<p>A new password will be sent shortly.</p>
+							<div class="text-center"><button id="btnForfotPassword" name="btnForfotPassword" class="btn_1" >Reset Password</button></div>
+						</div>
+					</div>
+					<!-- /form_container -->
+				</div>
+				<!-- /box_account -->
 				
+				<!-- /row -->
 			</div>
+				
+ </div>
 			<!-- /row -->
 			
 			
@@ -294,10 +276,49 @@ var base_url='<?=base_url()?>';
 </script>
 	<!-- COMMON SCRIPTS -->
     <script src="<?=base_url()?>js/common_scripts.js"></script>
-	<script src="<?=base_url()?>js/functions.js"></script>
-	<script src="<?=base_url()?>assets/validate.js"></script>
-
+	<script src="<?=base_url()?>js/validate.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/select2/select2.full.min.js"></script>
+	<script src="<?=base_url();?>js/jquery.validate.min.js"></script>
 	<script type="text/javascript">
+	$(function()
+			{
+				
+			    	    $(".select2").select2();
+				
+				$('#reg-form').validate(
+				{					
+					// Rules for form validation
+					rules:
+					{
+						first_name:{required: true},
+						address_line_1:{required: true,minlength:4},
+						country:{required: true},
+						state:{required: true},
+						city:{required: true},
+						phone:{required: true,minlength:6,number:true},
+						zip:{required: true,minlength:6,number:true},
+						email:{required: true,email:true},
+						pass:{required: true,minlength:6},
+						re_pass:{required: true,minlength:6,equalTo: "#pass"},
+						
+					},
+										
+					// Messages for form validation
+					messages:
+					{
+						name:{required: 'Please enter your Name'},
+						mobile:{required: 'Please enter your Mobile No'},
+						email:{required: 'Please enter valid Email'},
+						ic:{required: 'Enter Interested category'}
+					},					
+					
+					// Do not change code below
+					errorPlacement: function(error, element)
+					{
+						error.insertAfter(element.parent());
+					}
+				});
+			});	
 		
 		$("#country").on("change",function(){
 			if($("#country").val()!="")

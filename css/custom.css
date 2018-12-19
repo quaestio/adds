@@ -2,4 +2,8 @@
 /* Your custom styles below */
 /*============================================================================================*/
 .strip .wrapper p{height:50px;overflow:hidden}
-..strip .wrapper small {height:20px;overflow:hidden}
+.strip .wrapper small {height:20px;overflow:hidden}
+.error input{border:1px solid #ff0000!important}
+label.error{color:red;font-size:80%}
+input.error, select.error {color:red;border-color:#ff0000}
+.m-b-10{margin-bottom:10px}

@@ -2,11 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-define('GOOGLE_CAPTCHA_SITE_KEY', '6LfVxH0UAAAAAMNv7jfNN2UdJExfjx7P1UuPHLT0');
-define('GOOGLE_CAPTCHA_SECRET_KEY','6LfVxH0UAAAAAKwvwW4hn03DIlJJkdrD9CWLO_VL');
+define('GOOGLE_CAPTCHA_SITE_KEY', '6Lf_AnsUAAAAAPzeKchYOVShPA8H6LyT44jkDL-k');
+define('GOOGLE_CAPTCHA_SECRET_KEY','6Lf_AnsUAAAAAOQ-MvqE290KtxlYltqLHGmjgq9v');
 
-define('SITE_NAME', 'www.localsearch.com');
-define('SITE_URL', 'http://www.localsearch.com');
+define('SITE_NAME', 'http://www.wantafacility.com/');
+define('SITE_URL', 'http://www.wantafacility.com/');
 define('COPYRIGHT', 'Quaestio');
 define('DECIMAL_PLACE', '0');
 define('FILE_FORMATES_ALLOWED', 'gif|jpg|png|jpeg|mp4|avi|wmv');

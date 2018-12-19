@@ -65,7 +65,7 @@
 								<?php foreach($categories as $items)
 									echo '<option value="'.$items['category_name'].'">'.$items['category_name'].'</option>';
 								?>
-				</select>
+							</select>
 				
 							</div>
 							<div class="col-lg-1">
@@ -86,42 +86,33 @@
 		<div class="container margin_60_35">
 			
 			<div class="row">
-				 <div class="col-md-8">
-                <div class="alert alert-success" role="alert"> Thank you for registering with us</div> 
-              <h5>Verify Your Email and Mobile</h5>     
-              <hr />
-            <?php if($email_mobile_stat['email_verified']=="N"){?>
-                  <div class="row" id="emailBox">
-                  
-                  <div class="col-lg-8">
-                    <div class="input-group">
-                    	<input type="text" id="emailOTPtxt" class="form-control" placeholder="Email OTP...">
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" id="emailOTP">Verify Email</button>
-                        <button class="btn btn-info" type="button" id="emailOTPr">Resend</button>
-                      </span>
-                      
-                    </div><!-- /input-group -->
-                  </div><!-- /.col-lg-6 -->
-                 
-                  </div> <?php }
+				 <div class="col-md-12">
+				 <div class="box_account">
+				 <div class="form_container">
+                    <div class="alert alert-success" role="alert"> Thank you for registering with us</div> 
+                  <h5>Verify Your Email and Mobile</h5>     
+                  <hr />
+                <?php if($email_mobile_stat['email_verified']=="N"){?>
+                      <div class="row m-b-10" id="emailBox" >
+                
+                  			<div class="col-md-4"><input type="text" id="emailOTPtxt" class="form-control" placeholder="Email OTP..."></div>
+                    		<div class="col-md-2 m-b-10"><button class="btn_add" type="button" id="emailOTP">Verify Email</button></div>
+                    		<div class="col-md-2"><button class="btn_add" type="button" id="emailOTPr">Resend</button></div>
+                    </div> <?php }
                    if($email_mobile_stat['mobile_verified']=="N"){
                   ?>
                    <div class="row" id="PhoneBox">
-                  <div class="col-lg-8">
-                    <div class="input-group">
-                    	<input type="text" class="form-control" id="mobileOTPtxt" placeholder="Mobile OTP...">
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" id="mobileOTP">Verify Mobile</button>
-                        <button class="btn btn-info" type="button" id="mobileOTPr">Resend</button>
-                      </span>
-                      
-                    </div><!-- /input-group -->
-                  </div><!-- /.col-lg-6 -->
-             
+                     
+                        <div class="col-md-4 col-sm-4"><input type="text" class="form-control" id="mobileOTPtxt" placeholder="Mobile OTP..."></div>
+                        <div class="col-md-2 col-sm-2 m-b-10"><button class="btn_add" type="button" id="mobileOTP">Verify Mobile</button></div>
+                        <div class="col-md-2 col-sm-2"><button class=" btn_add" type="button" id="mobileOTPr">Resend</button></div>
+                          
+                         
                   </div>
                   <?php }?>
               <input type="hidden" id="cid" class="form-control" value="<?=$cid?>" />
+           </div>
+           </div>
            </div>
 				
 			</div>
