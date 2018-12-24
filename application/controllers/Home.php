@@ -22,6 +22,7 @@ class Home extends CI_Controller {
 	{
 	    $data['top_menu'] = $this->common_model-> menues();
 	    $data['categories'] = $this->common_model-> categories();
+	    $data['fp_categories'] = $this->common_model-> fp_categories();
 	    $this->load->view('home',$data);
 	}
 	

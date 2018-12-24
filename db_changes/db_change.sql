@@ -42,3 +42,6 @@ CHANGE `add_title` `add_title` VARCHAR( 1000 ) CHARACTER SET utf8 COLLATE utf8_g
 ALTER TABLE `add_manager` ADD `contacts` VARCHAR( 200 ) NOT NULL AFTER `pin_code` ;
 ALTER TABLE `add_manager` ADD `email` VARCHAR( 100 ) NOT NULL AFTER `contacts` ;
 ALTER TABLE `add_manager` ADD `hits` INT( 11 ) NOT NULL DEFAULT '0';
+
+20/12/2018
+ALTER TABLE `category` ADD `hits` INT( 11 ) NOT NULL ;

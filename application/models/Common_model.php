@@ -83,7 +83,12 @@ class Common_model extends CI_Model
     }
     public function categories()
     {
-        $sql = "select category_id ,category_name from category order by category_name";
+        $sql = "select category_id ,category_name from category where lavel=1 order by category_name";
+        return $this->db->query($sql)->result_array();
+    }
+    public function fp_categories()
+    {
+        $sql = "select category_id ,category_name from category where lavel=1  order by hits limit 0,5  ";
         return $this->db->query($sql)->result_array();
     }
     public function country_list()
@@ -102,10 +107,6 @@ class Common_model extends CI_Model
    
     function sendSMS($to,$message)
     {
-        
-        
-      
-       
          $message=urlencode($message);
          $url='http://sms.jhargram.in/api/sms.php?uid=717561657374696f&pin=531de9283a30c&sender=&route=1&mobile=9474972525&message='.$message.'&pushid=1';
          
@@ -115,11 +116,11 @@ class Common_model extends CI_Model
          curl_setopt($curl_handle,CURLOPT_RETURNTRANSFER,1);
          $buffer = curl_exec($curl_handle);
          curl_close($curl_handle);
-         if (empty($buffer))
-         print "Nothing returned from url.<p>";
+        // if (empty($buffer))
+            //print "Nothing returned from url.<p>";
          
-         else
-         print $buffer;
+        // else
+            // print $buffer;
          
     }
     function sendEmail($to,$subject,$message,$from='no-reply@quaestio.in',$senderName="",$attachment=null)
@@ -128,9 +129,9 @@ class Common_model extends CI_Model
        
         $config = Array(
             'protocol' => 'smtp',
-            'smtp_host' => 'mail.quaestio.in',
+            'smtp_host' => 'mail.wantafacility.com',
             'smtp_port' => 25,
-            'smtp_user' => 'no-reply@quaestio.in',
+            'smtp_user' => 'no-reply@wantafacility.com',
             'smtp_pass' => 'Sprihan#2012',
             'mailtype' => 'html',
             'charset'   => 'utf-8'
@@ -139,7 +140,7 @@ class Common_model extends CI_Model
          $this->load->library('email', $config);
          $this->email->set_newline("\r\n");
          $this->email->set_mailtype("html");
-         $this->email->from($from,'www.quaestio.in');
+         $this->email->from($from,'www.wantafacility.com');
          $this->email->reply_to($from);
          $this->email->to($to);
         

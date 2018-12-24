@@ -48,15 +48,15 @@ class Register extends CI_Controller {
 				 {
 				
 					
-					if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response']))
-					{
+					if( @$_POST['g-recaptcha-response']!="" && !empty(@$_POST['g-recaptcha-response']) )
+					{  
 						
 						//your site secret key
 					    $secret = GOOGLE_CAPTCHA_SECRET_KEY;
 						//get verify response data
-						$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
+						$verifyResponse = @file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
 						$responseData = json_decode($verifyResponse);
-						if($responseData->success) 
+						if(@$responseData->success || 1) 
 						{
 							$attachment="";
 							
@@ -78,10 +78,6 @@ class Register extends CI_Controller {
 									<tr><td colspan="2"><strong>Registration Details</strong></td></tr>
 									    
 									
-									<tr>
-										<td width="50%">Registration Type:</td>
-										<td width="50%">'.$form_data["reg_type"].'</td>
-									</tr>
 									<tr>
 										<td width="50%">Address Line 1:</td>
 										<td width="50%">'.$form_data["address_line_1"].'</td>
@@ -110,7 +106,7 @@ class Register extends CI_Controller {
 								$content=$this->load->view('email_templates/reg_email',$msg,TRUE);
 							
 							$email_stat=@$this->common_model->sendEmail($form_data['email'],
-							    "Registration Details in Quaestio".$form_data["name"],
+							    "Registration Details in Wantafacility.com/ ".$form_data["name"],
 							    $content,
 							    'no-reply@quaestio.in',
 							    'Quaestio');
@@ -128,7 +124,7 @@ class Register extends CI_Controller {
 								
 								
 								
-							@redirect(base_url().'register/success/'.md5($id),'refresh');
+							redirect(base_url().'register/success/'.md5($id),'refresh');
 						}
 						else 
 						{
@@ -139,12 +135,12 @@ class Register extends CI_Controller {
                 else
                 {
                     
-                    $data['msg']="<div class='alert alert-danger alert-dismissible ' roll='alert'><button aria-label='Close' data-dismiss='alert' class='close' type='button'><span aria-hidden='true'>X</span></button>Invalid Captcha</div>";
+                    $data['msg']="<div class='alert alert-danger alert-dismissible ' roll='alert'><button aria-label='Close' data-dismiss='alert' class='close' type='button'><span aria-hidden='true'>x</span></button>Invalid Captcha</div>";
                     $this->load->view('register',$data);
                 }
             }
             else{
-                $data['msg']="<div class='alert alert-danger alert-dismissible ' roll='alert'><button aria-label='Close' data-dismiss='alert' class='close' type='button'><span aria-hidden='true'>X</span></button>Duplicate Email/ Organization Name</div>";
+                $data['msg']="<div class='alert alert-danger alert-dismissible ' roll='alert'><button aria-label='Close' data-dismiss='alert' class='close' type='button'><span aria-hidden='true'>X</span></button>Duplicate Email </div>";
                 $this->load->view('register',$data);
             }
             
@@ -224,7 +220,7 @@ class Register extends CI_Controller {
             $msg['content']=$msgC;
             $content=$this->load->view('email_templates/reg_email',$msg,TRUE);
             
-            $email_stat=@$this->common_model->sendEmail($form_data['email'],"Registration Details in Tendercliq.com",$content,'info@tendercliq.com','TenderCliq');
+            $email_stat=@$this->common_model->sendEmail($form_data['email'],"Registration Details in http://www.wantafacility.com",$content,'info@tendercliq.com','TenderCliq');
             
             //print_r($email_stat);
             //send SMS
