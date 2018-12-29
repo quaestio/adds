@@ -78,7 +78,7 @@
 								  <div class="col-xs-12">
 								 		<div class="form-group">
 		                                     <label for="">Organization/Customer</label>
-		                                      <input type="text" placeholder="" id="first_name" name="first_name" value="<?=@$form_data['first_name'] ?>" class="form-control">
+		                                      <input type="text" placeholder="" id="first_name" name="first_name" value="<?=@$form_data['first_name'] ?>" class="form-control" autocomplete="off">
 		                                      <input type="hidden" placeholder="" id="customer_id" name="customer_id" value="<?=@$form_data['customer_id'] ?>" class="form-control">
 		                                 </div>
                                   </div>
@@ -106,7 +106,7 @@
                                 	 <div class="col-xs-6">
 								 		<div class="form-group">
 		                                     <label for="">Add Target City</label>
-		                                      <input type="text" placeholder="" id="city_name" name="city_name" value="<?=@$form_data['city_name'] ?>" class="form-control">
+		                                      <input type="text" placeholder="" id="city_name" name="city_name" value="<?=@$form_data['city_name'] ?>" class="form-control" autocomplete="off">
 		                                      <input type="hidden" placeholder="" id="city_id" name="city_id" value="<?=@$form_data['city_id'] ?>" class="form-control">
 		                                 </div>
                                   </div>					
@@ -313,9 +313,9 @@
  					{
  						category_id:{required: true},
  						customer_id:{required: true},
- 						tender_type:{required: true},
- 						ref_number:{required: true},
- 						title:{required: true},
+ 						city_id:{required: true},
+ 						add_title:{required: true},
+ 						contacts:{required: true},
  						
  						
  					},
