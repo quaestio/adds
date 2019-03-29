@@ -21,6 +21,7 @@
 
     <!-- BASE CSS -->
     <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url()?>js/select2/js/select2.css" rel="stylesheet">
     <link href="<?=base_url()?>css/style.css" rel="stylesheet">
 	<link href="<?=base_url()?>css/vendors.css" rel="stylesheet">
 
@@ -51,11 +52,14 @@
 								</div>
 							</div>
 							<div class="col-lg-3">
-								<div class="form-group">
-									<input class="form-control" type="text" id="s_city" name="s_city" placeholder="In my City">
-									<i class="icon_pin_alt"></i>
-								</div>
+								<select class="wide select2" name="s_city" id="s_city">
+								<option value="All">All Categories</option>	
+								
+									
+									
+								</select>
 							</div>
+						
 							<div class="col-lg-3">
 								<select class="wide" name="s_cat" id="s_cat">
 								<option value="All">All Categories</option>	
@@ -308,10 +312,12 @@
     <script src="<?=base_url()?>js/common_scripts.js"></script>
 	<script src="<?=base_url()?>js/functions.js"></script>
 	<script src="<?=base_url()?>assets/validate.js"></script>
+	<script src="<?=base_url()?>js/select2/js/select2.js"></script>
 	
 	<!-- SPECIFIC SCRIPTS -->
 	<script src="<?=base_url()?>js/animated_canvas_min.js"></script>
 <script type="text/javascript">
+$(".select2").select2();});
 $('#btnSearch').click(function(e){
 	e.preventDefault();
 	var s_txt =$('#s_txt').val()==""?'All':$('#s_txt').val();
@@ -321,7 +327,13 @@ $('#btnSearch').click(function(e){
 
 	
 });
-
+$('.select2').select2({
+	  ajax: {
+	    url: 'https://api.github.com/search/repositories',
+	    dataType: 'json'
+	    // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+	  }
+	});
 
 </script>
 </body>
